@@ -5,16 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Talks.SuperSpyLib.UI;
 using Talks.SuperSpyLib;
+using Talks.SuperSpyLib.Imp;
 
 namespace Talks.CodeToDiFor.Controllers
 {
     public class HomeController : Controller
     {
+     
         IMessageSender sender;
         public HomeController(IMessageSender Sender)
         {
             sender = Sender;
         }
+
 
         public IActionResult Index()
         {
@@ -46,6 +49,7 @@ namespace Talks.CodeToDiFor.Controllers
             {
                 Title = "Secret Spy Page",
             };
+
 
             model.Messages = sender.Send(model.Messages, "Save the World!");
 
