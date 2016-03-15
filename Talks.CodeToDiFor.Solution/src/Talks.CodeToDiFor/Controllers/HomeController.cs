@@ -37,7 +37,7 @@ namespace Talks.CodeToDiFor.Controllers
         {
             var model = new BondViewModel()
             {
-                Title = "Spy Page",
+                Title = "Secret Spy Page",
                 Messages = new List<string>()
                 {
                     "Message One",
