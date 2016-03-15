@@ -38,7 +38,8 @@ namespace Talks.CodeToDiFor
             services.AddTransient<IEncrypter, Encrypter>();
             services.AddTransient<IShippingCalculator, ShippingCalculator>();
             services.AddTransient<ISpyLogger, SpyLogger>();
-            services.AddTransient<IDataLayer, DataLayer>();
+
+            services.AddSingleton<IDataLayer, DataLayer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
