@@ -3,6 +3,10 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5.1": {
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -60,6 +64,9 @@
         "runtime": {
           "lib/net45/xunit.execution.desktop.dll": {}
         }
+      },
+      "xunit.runner.visualstudio/2.1.0": {
+        "type": "package"
       }
     },
     ".NETPlatform,Version=v5.4": {
@@ -306,6 +313,17 @@
           "ref/dotnet/System.Threading.Tasks.dll": {}
         }
       },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.4",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-beta-23516",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
+        }
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -403,6 +421,10 @@
       }
     },
     ".NETFramework,Version=v4.5.1/win7-x86": {
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -460,9 +482,16 @@
         "runtime": {
           "lib/net45/xunit.execution.desktop.dll": {}
         }
+      },
+      "xunit.runner.visualstudio/2.1.0": {
+        "type": "package"
       }
     },
     ".NETFramework,Version=v4.5.1/win7-x64": {
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -520,6 +549,9 @@
         "runtime": {
           "lib/net45/xunit.execution.desktop.dll": {}
         }
+      },
+      "xunit.runner.visualstudio/2.1.0": {
+        "type": "package"
       }
     },
     ".NETPlatform,Version=v5.4/win7-x86": {
@@ -770,6 +802,17 @@
         },
         "compile": {
           "ref/dotnet/System.Threading.Tasks.dll": {}
+        }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.4",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-beta-23516",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
         }
       },
       "xunit/2.1.0": {
@@ -1118,6 +1161,17 @@
           "ref/dotnet/System.Threading.Tasks.dll": {}
         }
       },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.4",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-beta-23516",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
+        }
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -1216,6 +1270,10 @@
     }
   },
   "libraries": {
+    "Talks.SuperSpyLib/1.0.0": {
+      "type": "project",
+      "path": "../Talks.SuperSpyLib/project.json"
+    },
     "Microsoft.CSharp/4.0.1-beta-23516": {
       "type": "package",
       "serviceable": true,
@@ -2291,13 +2349,48 @@
         "xunit.extensibility.execution.2.1.0.nupkg.sha512",
         "xunit.extensibility.execution.nuspec"
       ]
+    },
+    "xunit.runner.visualstudio/2.1.0": {
+      "type": "package",
+      "sha512": "44vJFEQopk8SHfPMjgzn4QevRNfITO7zRZBo9lb+OPhID7v/q2gFaOgyEUomKilq2rwWUQ0m9yquBOzJL4L4aA==",
+      "files": [
+        "build/_common/xunit.abstractions.dll",
+        "build/_common/xunit.runner.utility.desktop.dll",
+        "build/_common/xunit.runner.utility.dotnet.dll",
+        "build/_common/xunit.runner.visualstudio.testadapter.dll",
+        "build/monoandroid/_._",
+        "build/monotouch/_._",
+        "build/net20/xunit.runner.visualstudio.props",
+        "build/portable-net45+win8+wp8+wpa81/xunit.runner.visualstudio.props",
+        "build/uap10.0/xunit.runner.visualstudio.props",
+        "build/uap10.0/xunit.runner.visualstudio.targets",
+        "build/uap10.0/xunit.runner.visualstudio.uwp.dll",
+        "build/uap10.0/xunit.runner.visualstudio.uwp.pri",
+        "build/win8/_._",
+        "build/win81/xunit.runner.visualstudio.props",
+        "build/win81/xunit.runner.visualstudio.targets",
+        "build/win81/xunit.runner.visualstudio.win81.dll",
+        "build/win81/xunit.runner.visualstudio.win81.pri",
+        "build/wp8/_._",
+        "build/wpa81/xunit.runner.visualstudio.props",
+        "build/wpa81/xunit.runner.visualstudio.targets",
+        "build/wpa81/xunit.runner.visualstudio.wpa81.dll",
+        "build/wpa81/xunit.runner.visualstudio.wpa81.pri",
+        "build/xamarinios/_._",
+        "xunit.runner.visualstudio.2.1.0.nupkg",
+        "xunit.runner.visualstudio.2.1.0.nupkg.sha512",
+        "xunit.runner.visualstudio.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "Talks.SuperSpyLib >= 1.0.0-*",
       "xunit >= 2.1.0"
     ],
-    ".NETFramework,Version=v4.5.1": [],
+    ".NETFramework,Version=v4.5.1": [
+      "xunit.runner.visualstudio >= 2.1.0"
+    ],
     ".NETPlatform,Version=v5.4": [
       "Microsoft.CSharp >= 4.0.1-beta-23516",
       "System.Collections >= 4.0.11-beta-23516",
