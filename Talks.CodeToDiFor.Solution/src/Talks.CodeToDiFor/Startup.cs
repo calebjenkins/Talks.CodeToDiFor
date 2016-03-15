@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Talks.SuperSpyLib;
 using Talks.SuperSpyLib.Imp;
+using Talks.SuperSpyLib.Data;
 
 namespace Talks.CodeToDiFor
 {
@@ -32,6 +33,12 @@ namespace Talks.CodeToDiFor
             services.AddMvc();
 
             services.AddTransient<IMessageSender, MessageSender>();
+
+            // More Dependencies..
+            services.AddTransient<IEncrypter, Encrypter>();
+            services.AddTransient<IShippingCalculator, ShippingCalculator>();
+            services.AddTransient<ISpyLogger, SpyLogger>();
+            services.AddTransient<IDataLayer, DataLayer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
