@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using Talks.SuperSpyLib.UI;
 
 namespace Talks.CodeToDiFor.Controllers
 {
@@ -30,6 +31,22 @@ namespace Talks.CodeToDiFor.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+
+        public IActionResult Bond()
+        {
+            var model = new BondViewModel()
+            {
+                Title = "Spy Page",
+                Messages = new List<string>()
+                {
+                    "Message One",
+                    "Message Two",
+                    "Message Three"
+                }
+            };
+
+            return View(model);
         }
     }
 }
