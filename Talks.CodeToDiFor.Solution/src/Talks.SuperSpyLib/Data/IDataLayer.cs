@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Talks.SuperSpyLib.Data
 {
-    interface IDataLayer
+    public interface IDataLayer
     {
         IList<string> Update(IList<string> Context, string Data);
     }
