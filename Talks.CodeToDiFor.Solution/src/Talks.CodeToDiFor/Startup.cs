@@ -7,6 +7,8 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Talks.SuperSpyLib;
+using Talks.SuperSpyLib.Imp;
 
 namespace Talks.CodeToDiFor
 {
@@ -28,6 +30,8 @@ namespace Talks.CodeToDiFor
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<IMessageSender, MessageSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

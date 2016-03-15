@@ -4,11 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Talks.SuperSpyLib.UI;
+using Talks.SuperSpyLib;
 
 namespace Talks.CodeToDiFor.Controllers
 {
     public class HomeController : Controller
     {
+        IMessageSender sender;
+        public HomeController(IMessageSender Sender)
+        {
+            sender = Sender;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -38,13 +45,9 @@ namespace Talks.CodeToDiFor.Controllers
             var model = new BondViewModel()
             {
                 Title = "Secret Spy Page",
-                Messages = new List<string>()
-                {
-                    "Message One",
-                    "Message Two",
-                    "Message Three"
-                }
             };
+
+            model.Messages = sender.Send(model.Messages, "Save the World!");
 
             return View(model);
         }
