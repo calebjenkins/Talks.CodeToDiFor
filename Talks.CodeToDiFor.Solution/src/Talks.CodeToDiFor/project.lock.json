@@ -1660,6 +1660,10 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
       }
     },
     "DNXCore,Version=v5.0": {
@@ -3951,6 +3955,17 @@
         "runtime": {
           "lib/dotnet5.4/System.Xml.XDocument.dll": {}
         }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.4",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-beta-23516",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
@@ -5614,6 +5629,10 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
@@ -7277,6 +7296,10 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
@@ -9901,6 +9924,17 @@
         },
         "runtime": {
           "lib/dotnet5.4/System.Xml.XDocument.dll": {}
+        }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.4",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-beta-23516",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
         }
       }
     },
@@ -12527,10 +12561,25 @@
         "runtime": {
           "lib/dotnet5.4/System.Xml.XDocument.dll": {}
         }
+      },
+      "Talks.SuperSpyLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.4",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1-beta-23516",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
+        }
       }
     }
   },
   "libraries": {
+    "Talks.SuperSpyLib/1.0.0": {
+      "type": "project",
+      "path": "../Talks.SuperSpyLib/project.json"
+    },
     "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -17522,7 +17571,8 @@
       "Microsoft.Extensions.Logging >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
-      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final"
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final",
+      "Talks.SuperSpyLib >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []
