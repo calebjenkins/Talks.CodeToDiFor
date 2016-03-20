@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Drawing;
+using Talks.PCL.SuperSpyLib;
+using Talks.PCL.SuperSpyLib.Imp;
+using Talks.PCL.SuperSpyLib.UI;
 
 namespace Talks.CodeToDiFor.MVC5Web.Controllers
 {
@@ -25,6 +29,20 @@ namespace Talks.CodeToDiFor.MVC5Web.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Bond()
+        {
+            ISpyLogger logger = new SpyLogger();
+            logger.Log("You are in the Home Controller, Bond Action");
+
+            var model = new BondViewModel()
+            {
+                Title = "Secret Spy Page",
+                Messages = logger.GetMessages()
+            };
+
+            return View(model);
         }
     }
 }
