@@ -19,4 +19,20 @@ namespace Talks.PCL.SuperSpyLib.Imp
             messages.Push("Logged: " + Message);
         }
     }
+
+    public class FakeSpyLogger : ISpyLogger
+    {
+        private Stack<string> messages = new Stack<string>();
+        
+
+        public IEnumerable<string> GetMessages()
+        {
+            return messages;
+        }
+
+        public void Log(string Message)
+        {
+            messages.Push("Fake Log: " + Message);
+        }
+    }
 }

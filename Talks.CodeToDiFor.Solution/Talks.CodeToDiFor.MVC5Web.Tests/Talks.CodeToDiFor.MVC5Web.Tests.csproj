@@ -35,6 +35,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -95,6 +99,10 @@
     <ProjectReference Include="..\Talks.CodeToDiFor.MVC5Web\Talks.CodeToDiFor.MVC5Web.csproj">
       <Project>{206175A9-C627-42D8-ABD5-1A82D73DA677}</Project>
       <Name>Talks.CodeToDiFor.MVC5Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj">
+      <Project>{5adf95e7-576b-4d8e-9bd5-5fe6e88e2a82}</Project>
+      <Name>Talks.PCL.SuperSpyLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
