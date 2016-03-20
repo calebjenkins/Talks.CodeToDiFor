@@ -14,14 +14,16 @@ namespace Talks.CodeToDiFor.MVC5Web.Controllers
     {
 
         ISpyLogger logger;
+        IMessageSender messenger;
 
-        public HomeController() : this (new FakeSpyLogger())
+        public HomeController() : this (new FakeSpyLogger(), new MessageSender(new FakeSpyLogger()))
         {
         }
 
-        public HomeController(ISpyLogger logger)
+        public HomeController(ISpyLogger logger, IMessageSender Messenger)
         {
             this.logger = logger;
+            messenger = Messenger;
         }
 
         public ActionResult Index()
@@ -47,6 +49,7 @@ namespace Talks.CodeToDiFor.MVC5Web.Controllers
         {
         //    ISpyLogger logger = new SpyLogger();
             logger.Log("You are in the Home Controller, Bond Action");
+            messenger.Send("Sending message from Home Controller, Bond Action");
 
             var model = new BondViewModel()
             {

@@ -16,11 +16,13 @@ namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
     public class HomeControllerTest
     {
         private ISpyLogger logMock;
+        private IMessageSender senderMock;
 
         [TestInitialize]
         public void SetUp()
         {
             logMock = MockRepository.GenerateMock<ISpyLogger>();
+            senderMock = MockRepository.GenerateStub<IMessageSender>();
         }
 
 
@@ -41,7 +43,7 @@ namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController(logMock);
+            HomeController controller = new HomeController(logMock, senderMock);
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -54,7 +56,7 @@ namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController(logMock);
+            HomeController controller = new HomeController(logMock, senderMock);
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;
