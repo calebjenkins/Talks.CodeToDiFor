@@ -45,6 +45,7 @@
     <Compile Include="Imp\Encrypter.cs" />
     <Compile Include="Imp\MessageSender.cs" />
     <Compile Include="Imp\ShippingCalculator.cs" />
+    <Compile Include="Imp\SpyDataLayer.cs" />
     <Compile Include="Imp\SpyLogger.cs" />
     <Compile Include="IShippingCalculator.cs" />
     <Compile Include="ISpyLogger.cs" />

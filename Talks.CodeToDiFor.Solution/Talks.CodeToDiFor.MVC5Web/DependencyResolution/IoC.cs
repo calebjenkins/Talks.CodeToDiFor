@@ -18,6 +18,7 @@
 
 namespace Talks.CodeToDiFor.MVC5Web.DependencyResolution {
     using PCL.SuperSpyLib;
+    using PCL.SuperSpyLib.Data;
     using PCL.SuperSpyLib.Imp;
     using StructureMap;
 
@@ -28,13 +29,18 @@ namespace Talks.CodeToDiFor.MVC5Web.DependencyResolution {
                 {
                     x.Scan(scan =>
                     {
-                        scan.AssemblyContainingType<Talks.PCL.SuperSpyLib.ISpyLogger>();
-                        // scan.RegisterConcreteTypesAgainstTheFirstInterface();
-                        scan.WithDefaultConventions();
+                        // x.For<ISpyLogger>().Use<SpyLogger>().Singleton();
+                        x.For<ISpyLogger>().Use<FakeSpyLogger>();
+                        x.For<ISpyDataLayer>().Use<SpyDataLayer>();
+                        x.For<IMessageSender>().Use<MessageSender>();
+                        x.For<IEncrypter>().Use<Encrypter>();
+                        x.For<IShippingCalculator>().Use<ShippingCalculator>();
+
+                        // scan.AssemblyContainingType<ISpyLogger>();
+                        // scan.WithDefaultConventions();
                     });
 
-                    // x.For<ISpyLogger>().Use<SpyLogger>();
-                    x.AddRegistry<DefaultRegistry>();
+                    // x.AddRegistry<DefaultRegistry>();
                 });
 
 

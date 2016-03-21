@@ -16,10 +16,6 @@ namespace Talks.CodeToDiFor.MVC5Web.Controllers
         ISpyLogger logger;
         IMessageSender messenger;
 
-        public HomeController() : this (new FakeSpyLogger(), new MessageSender(new FakeSpyLogger()))
-        {
-        }
-
         public HomeController(ISpyLogger logger, IMessageSender Messenger)
         {
             this.logger = logger;

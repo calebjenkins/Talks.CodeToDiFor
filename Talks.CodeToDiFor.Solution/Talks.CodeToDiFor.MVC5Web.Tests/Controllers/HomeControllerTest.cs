@@ -30,7 +30,7 @@ namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
         public void Index()
         {
             // Arrange -- no dependendies - poor man's DI
-            HomeController controller = new HomeController();
+            HomeController controller = new HomeController(logMock, senderMock);
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
