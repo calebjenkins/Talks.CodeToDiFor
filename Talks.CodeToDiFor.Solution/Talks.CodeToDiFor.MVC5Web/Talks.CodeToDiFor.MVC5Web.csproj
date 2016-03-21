@@ -202,6 +202,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Talks.PCL.BetterSpyLib\Talks.PCL.BetterSpyLib.csproj">
+      <Project>{a9464c18-3f46-46a3-a750-7d4b1bc4590c}</Project>
+      <Name>Talks.PCL.BetterSpyLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj">
       <Project>{5adf95e7-576b-4d8e-9bd5-5fe6e88e2a82}</Project>
       <Name>Talks.PCL.SuperSpyLib</Name>
