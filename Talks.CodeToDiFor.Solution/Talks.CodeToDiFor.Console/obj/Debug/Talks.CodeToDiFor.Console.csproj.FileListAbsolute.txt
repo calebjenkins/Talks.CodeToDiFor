@@ -1,0 +1,8 @@
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.PCL.SuperSpyLib.dll
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.PCL.SuperSpyLib.pdb
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.CodeToDiFor.ConsoleApp.exe.config
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.CodeToDiFor.ConsoleApp.exe
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.CodeToDiFor.ConsoleApp.pdb
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.ConsoleApp.exe
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.ConsoleApp.pdb
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.Console.csprojResolveAssemblyReference.cache
