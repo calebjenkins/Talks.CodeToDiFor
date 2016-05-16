@@ -10,6 +10,19 @@ namespace Talks.PCL.SuperSpyLib.Imp
         ISpyLogger logger;
         ISpyDataLayer data;
 
+        public MessageSender()
+        {
+            IEncrypter enc = new Encrypter();
+            logger = new SpyLogger();
+            data = new SpyDataLayer(logger, enc);
+        }
+
+        public MessageSender(ISpyLogger logger)
+        {
+            this.logger = logger;
+            IEncrypter enc = new Encrypter();
+            data = new SpyDataLayer(logger, enc);
+        }
 
         public MessageSender(ISpyLogger logger, ISpyDataLayer Data)
         {
