@@ -34,7 +34,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
             Console.Write("\n\tDone.");
             Console.ReadLine();
 
-           ConsoleWithDI();
+           //ConsoleWithDI();
         }
 
         static void ConsoleWithDI()
@@ -68,7 +68,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
         static IKernel getContainer()
         {
             IKernel container = new StandardKernel();
-            container.Bind<ISpyLogger>().To<SpyLogger>().InSingletonScope();
+            container.Bind<ISpyLogger>().To<SpyLogger>();
             container.Bind<IEncrypter>().To<Encrypter>();
             container.Bind<ISpyDataLayer>().To<SpyDataLayer>();
             container.Bind<IMessageSender>().To<MessageSender>();
