@@ -8,3 +8,7 @@ C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Tal
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.Console.csprojResolveAssemblyReference.cache
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Ninject.dll
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Ninject.xml
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\CommonServiceLocator.NinjectAdapter.Unofficial.dll
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.xml

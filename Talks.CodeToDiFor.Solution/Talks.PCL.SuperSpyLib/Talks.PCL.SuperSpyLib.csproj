@@ -56,6 +56,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\JamesBondRule.cs" />
     <Compile Include="Rules\NewestBondRule.cs" />
+    <Compile Include="Rules\Shipping\EconomyShippingDiscountRule.cs" />
+    <Compile Include="Rules\Shipping\ExtraLargeShippingRule.cs" />
+    <Compile Include="Rules\Shipping\GodSaveTheQueenShippingRule.cs" />
+    <Compile Include="Rules\Shipping\HurryHurryShippingRule.cs" />
+    <Compile Include="Rules\Shipping\IShippingRule.cs" />
+    <Compile Include="Rules\Shipping\RushOrderShippingRule.cs" />
     <Compile Include="Rules\WorstBondRule.cs" />
     <Compile Include="UI\BondViewModel.cs" />
   </ItemGroup>
