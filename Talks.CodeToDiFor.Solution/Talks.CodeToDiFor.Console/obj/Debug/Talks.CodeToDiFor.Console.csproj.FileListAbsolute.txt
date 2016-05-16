@@ -12,3 +12,6 @@ C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Tal
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\CommonServiceLocator.StructureMapAdapter.Unofficial.dll
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.dll
+C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.Net4.dll

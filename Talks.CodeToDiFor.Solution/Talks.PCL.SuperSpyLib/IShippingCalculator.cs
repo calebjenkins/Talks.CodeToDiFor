@@ -6,6 +6,6 @@ namespace Talks.PCL.SuperSpyLib
 {
     public interface IShippingCalculator
     {
-        decimal CalculateCost(string Item, decimal WeightInLbs);
+        decimal CalculateCost(string Item, decimal BaseCost);
     }
 }
