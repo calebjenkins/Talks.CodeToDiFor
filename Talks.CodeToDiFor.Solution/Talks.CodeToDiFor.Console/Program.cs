@@ -34,7 +34,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
             Console.Write("\n\tDone.");
             Console.ReadLine();
 
-           //ConsoleWithDI();
+            ConsoleWithDI();
         }
 
         static void ConsoleWithDI()
@@ -43,8 +43,6 @@ namespace Talks.CodeToDiFor.ConsoleApp
             var container = getContainer();
             var senderDI = container.Get<IMessageSender>();
             var loggerDI = container.Get<ISpyLogger>();
-            var calc = container.Get<IShippingCalculator>();
-            var cost = calc.CalculateCost("", 0.0M);
 
 
             Console.WriteLine("\n\t* * * Spy Message Sender with DI * * *");
@@ -61,6 +59,14 @@ namespace Talks.CodeToDiFor.ConsoleApp
                 Console.WriteLine("\t\t - " + msg);
             }
 
+            // Collections //
+            //var rules = container.GetAll<IRule>();
+            //Console.WriteLine("\tRules:");
+            //foreach (var rule in rules)
+            //{
+            //    Console.WriteLine("\t\t - " + rule.RuleName());
+            //}
+
             Console.Write("\n\tDI Done.");
             Console.ReadLine();
         }
@@ -68,7 +74,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
         static IKernel getContainer()
         {
             IKernel container = new StandardKernel();
-            container.Bind<ISpyLogger>().To<SpyLogger>();
+            container.Bind<ISpyLogger>().To<SpyLogger>(); // Show collections before Singleton
             container.Bind<IEncrypter>().To<Encrypter>();
             container.Bind<ISpyDataLayer>().To<SpyDataLayer>();
             container.Bind<IMessageSender>().To<MessageSender>();
