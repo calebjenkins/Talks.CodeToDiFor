@@ -3,21 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2E3BAB58-4209-438D-B7DA-C3FE54B53432}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.CodeToDiFor.MVC5Web", "Talks.CodeToDiFor.MVC5Web\Talks.CodeToDiFor.MVC5Web.csproj", "{206175A9-C627-42D8-ABD5-1A82D73DA677}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.CodeToDiFor.MVC5Web.Tests", "Talks.CodeToDiFor.MVC5Web.Tests\Talks.CodeToDiFor.MVC5Web.Tests.csproj", "{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC5", "MVC5", "{53F47844-C270-499B-AA74-968234A30ADD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.PCL.SuperSpyLib", "Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj", "{5ADF95E7-576B-4D8E-9BD5-5FE6E88E2A82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.PCL.BetterSpyLib", "Talks.PCL.BetterSpyLib\Talks.PCL.BetterSpyLib.csproj", "{A9464C18-3F46-46A3-A750-7D4B1BC4590C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{AD6A76D3-9E5C-46DF-BE8E-49DF262B3F3F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{2EF3370C-1B53-4C2D-97AA-C5EAE1841403}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.CodeToDiFor.Console", "Talks.CodeToDiFor.Console\Talks.CodeToDiFor.Console.csproj", "{A3C0664B-BD0E-4DC3-BEC6-5AB89DC29C3B}"
 EndProject
@@ -52,8 +46,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{206175A9-C627-42D8-ABD5-1A82D73DA677} = {53F47844-C270-499B-AA74-968234A30ADD}
-		{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA} = {53F47844-C270-499B-AA74-968234A30ADD}
 		{5ADF95E7-576B-4D8E-9BD5-5FE6E88E2A82} = {AD6A76D3-9E5C-46DF-BE8E-49DF262B3F3F}
 		{A9464C18-3F46-46A3-A750-7D4B1BC4590C} = {AD6A76D3-9E5C-46DF-BE8E-49DF262B3F3F}
 	EndGlobalSection
