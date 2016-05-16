@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Talks.PCL.SuperSpyLib.Rules;
 
 namespace Talks.PCL.SuperSpyLib.Imp
 {
     public class ShippingCalculator : IShippingCalculator
     {
         ISpyLogger logger;
+        IList<IRule> rules;
 
-        public ShippingCalculator(ISpyLogger logger)
+        public ShippingCalculator(ISpyLogger logger, IList<IRule> rules)
         {
             this.logger = logger;
+            this.rules = rules;
         }
 
 
@@ -20,6 +23,11 @@ namespace Talks.PCL.SuperSpyLib.Imp
 
             var cost = (WeightInLbs > 10) ? Convert.ToDecimal(5.0) : Convert.ToDecimal(2.0);
             logger.Log("Cost to ship " + Item + " is " + cost.ToString());
+
+            foreach(var r in rules)
+            {
+                logger.Log("Bond Rule: " + r.RuleName());
+            }
 
             return cost;
         }

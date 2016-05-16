@@ -19,6 +19,10 @@ namespace Talks.PCL.BetterSpyLib
         {
             return messages;
         }
+        public Stack<string> GetMessagesStack()
+        {
+            return messages;
+        }
 
         public void Log(string Message)
         {

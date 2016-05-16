@@ -8,5 +8,6 @@ namespace Talks.PCL.SuperSpyLib
     {
         void Log(string Message);
         IEnumerable<string> GetMessages();
+        Stack<string> GetMessagesStack();
     }
 }
