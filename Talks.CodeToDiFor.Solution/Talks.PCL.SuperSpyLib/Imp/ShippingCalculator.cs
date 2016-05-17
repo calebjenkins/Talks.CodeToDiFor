@@ -20,13 +20,14 @@ namespace Talks.PCL.SuperSpyLib.Imp
         public decimal CalculateCost(string Item, decimal BaseCost)
         {
             logger.Log("Calculating Shipping cost for " + Item);
-            var weight = Item.Length;
 
             // Complex Shipping Rules go here.. 
+            var weight = Item.Length;
             var cost = (weight > 10) ? Convert.ToDecimal(5.0) : Convert.ToDecimal(2.0);
-            logger.Log("Cost to ship " + Item + " is " + cost.ToString());
 
             // ..Or...
+
+            cost = BaseCost;
             foreach (var rule in rules)
             {
                 if(rule.AppliesTo(Item))
@@ -36,6 +37,7 @@ namespace Talks.PCL.SuperSpyLib.Imp
                 }
             }
 
+            logger.Log("Cost to ship " + Item + " is " + cost.ToString());
             return cost;
         }
     }

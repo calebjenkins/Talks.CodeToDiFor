@@ -21,13 +21,13 @@ namespace Talks.CodeToDiFor.ConsoleApp
     {
         static void Main(string[] args)
         {
-            // DoConsoleApp();
+            DoConsoleApp();
 
             // ConsoleWithDI();
 
             // ConsoleWithCslDI();
 
-            ConsoleWithSM_CSL_DI();
+            // ConsoleWithSM_CSL_DI();
         }
 
         static void DoConsoleApp()
@@ -37,7 +37,10 @@ namespace Talks.CodeToDiFor.ConsoleApp
             var input = Console.ReadLine();
 
             ISpyLogger logger = new SpyLogger();
-            IMessageSender sender = new MessageSender(logger);
+            IEncrypter enc = new Encrypter(logger);
+            ISpyDataLayer data = new SpyDataLayer(logger, enc);
+
+            IMessageSender sender = new MessageSender(logger, data);
             sender.Send(input);
 
 
@@ -74,13 +77,13 @@ namespace Talks.CodeToDiFor.ConsoleApp
                 Console.WriteLine("\t\t - " + msg);
             }
 
-            // Collections //
-            //var rules = container.GetAll<IRule>();
-            //Console.WriteLine("\tRules:");
-            //foreach (var rule in rules)
-            //{
-            //    Console.WriteLine("\t\t - " + rule.RuleName());
-            //}
+            // Collections // - Show Singleton before Collection
+            var rules = container.GetAll<IRule>();
+            Console.WriteLine("\tRules:");
+            foreach (var rule in rules)
+            {
+                Console.WriteLine("\t\t - " + rule.RuleName());
+            }
 
             Console.Write("\n\tDI Done.");
             Console.ReadLine();
@@ -88,7 +91,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
         static IKernel getContainer()
         {
             IKernel container = new StandardKernel();
-            container.Bind<ISpyLogger>().To<SpyLogger>(); // Show collections before Singleton
+            container.Bind<ISpyLogger>().To<SpyLogger>().InSingletonScope(); // Singleton
             container.Bind<IEncrypter>().To<Encrypter>();
             container.Bind<ISpyDataLayer>().To<SpyDataLayer>();
             container.Bind<IMessageSender>().To<MessageSender>();

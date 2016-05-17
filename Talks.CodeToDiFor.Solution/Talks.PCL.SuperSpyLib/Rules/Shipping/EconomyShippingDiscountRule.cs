@@ -8,7 +8,7 @@ namespace Talks.PCL.SuperSpyLib.Rules.Shipping
     {
         public bool AppliesTo(string Message)
         {
-            return Message.Count() < 4;
+            return Message.Count() < 5;
         }
 
         public decimal ApplyShippingRule(string Message, decimal CurrentShippingPrice)
