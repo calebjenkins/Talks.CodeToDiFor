@@ -23,11 +23,11 @@ namespace Talks.CodeToDiFor.ConsoleApp
         {
             DoConsoleApp();
 
-            // ConsoleWithDI();
+            //ConsoleWithDI();
 
-            // ConsoleWithCslDI();
+            //ConsoleWithCslDI();
 
-            // ConsoleWithSM_CSL_DI();
+            //ConsoleWithSM_CSL_DI();
         }
 
         static void DoConsoleApp()
