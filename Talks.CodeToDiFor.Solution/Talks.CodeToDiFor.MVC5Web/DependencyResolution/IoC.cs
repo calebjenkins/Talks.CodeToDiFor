@@ -21,6 +21,7 @@ namespace Talks.CodeToDiFor.MVC5Web.DependencyResolution {
     using PCL.SuperSpyLib;
     using PCL.SuperSpyLib.Data;
     using PCL.SuperSpyLib.Imp;
+    using PCL.SuperSpyLib.Rules.Shipping;
     using StructureMap;
 
     public static class IoC {
@@ -30,15 +31,17 @@ namespace Talks.CodeToDiFor.MVC5Web.DependencyResolution {
                 {
                     x.Scan(scan =>
                     {
-                        x.For<ISpyLogger>().Use<BetterSpyLogger>().Singleton();
-                        // x.For<ISpyLogger>().Use<FakeSpyLogger>();
+                        x.For<ISpyLogger>().Use<SpyLogger>().Singleton();
+                        //x.For<ISpyLogger>().Use<BetterSpyLogger>().Singleton();
+                        //x.For<ISpyLogger>().Use<FakeSpyLogger>();
                         //x.For<ISpyDataLayer>().Use<SpyDataLayer>();
                         //x.For<IMessageSender>().Use<MessageSender>();
-                        x.For<IEncrypter>().Use<BetterEncrypter>();
+                        //x.For<IEncrypter>().Use<BetterEncrypter>();
                         //x.For<IShippingCalculator>().Use<ShippingCalculator>();
+                        scan.AddAllTypesOf<IShippingRule>();
 
-                         scan.AssemblyContainingType<ISpyLogger>();
-                         scan.WithDefaultConventions();
+                        scan.AssemblyContainingType<ISpyLogger>();
+                        scan.WithDefaultConventions();
                     });
 
                     // x.AddRegistry<DefaultRegistry>();

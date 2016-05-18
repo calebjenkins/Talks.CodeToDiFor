@@ -30,7 +30,6 @@ C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Tal
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\StructureMap.dll
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\StructureMap.Net4.dll
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Talks.PCL.BetterSpyLib.dll
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\StructureMap.Web.dll
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Talks.CodeToDiFor.MVC5Web.pdb
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Talks.PCL.SuperSpyLib.pdb
@@ -49,7 +48,6 @@ C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Tal
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\StructureMap.Net4.pdb
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\Talks.PCL.BetterSpyLib.pdb
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\StructureMap.Web.pdb
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\bin\Debug\StructureMap.Web.xml
 C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\obj\Debug\Talks.CodeToDiFor.MVC5Web.Tests.csprojResolveAssemblyReference.cache
