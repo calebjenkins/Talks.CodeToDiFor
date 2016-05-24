@@ -75,9 +75,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj">
-      <Project>{5adf95e7-576b-4d8e-9bd5-5fe6e88e2a82}</Project>
-      <Name>Talks.PCL.SuperSpyLib</Name>
+    <ProjectReference Include="..\Talks.BetterSpyLib\Talks.BetterSpyLib.csproj">
+      <Project>{40f5767c-b495-41c5-a9e2-e57110141e25}</Project>
+      <Name>Talks.BetterSpyLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Talks.SuperSpyLib\Talks.SuperSpyLib.csproj">
+      <Project>{78ac14da-990c-4a82-9ebc-055197d3220e}</Project>
+      <Name>Talks.SuperSpyLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

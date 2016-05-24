@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}</ProjectGuid>
+    <ProjectGuid>{5B8BD0E3-A2B1-41BF-97BA-106958871F48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Talks.CodeToDiFor.MVC5Web.Tests</RootNamespace>
@@ -35,10 +35,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -86,7 +82,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LibraryTests\WhenSendingMessages_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -97,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj">
-      <Project>{5adf95e7-576b-4d8e-9bd5-5fe6e88e2a82}</Project>
-      <Name>Talks.PCL.SuperSpyLib</Name>
+    <ProjectReference Include="..\Talks.CodeToDiFor.MVC5Web\Talks.CodeToDiFor.MVC5Web.csproj">
+      <Project>{0FC14F4A-F367-4D0C-96BB-7EC8B725269B}</Project>
+      <Name>Talks.CodeToDiFor.MVC5Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

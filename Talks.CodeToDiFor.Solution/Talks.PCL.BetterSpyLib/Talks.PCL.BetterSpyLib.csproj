@@ -43,12 +43,6 @@
     <Compile Include="BetterSpyLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj">
-      <Project>{5adf95e7-576b-4d8e-9bd5-5fe6e88e2a82}</Project>
-      <Name>Talks.PCL.SuperSpyLib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

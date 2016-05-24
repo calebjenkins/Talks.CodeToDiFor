@@ -6,31 +6,17 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Talks.CodeToDiFor.MVC5Web;
 using Talks.CodeToDiFor.MVC5Web.Controllers;
-using Talks.PCL.SuperSpyLib;
-using Rhino.Mocks;
-using System.Text.RegularExpressions;
 
 namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
     {
-        private ISpyLogger logMock;
-        private IMessageSender senderMock;
-
-        [TestInitialize]
-        public void SetUp()
-        {
-            logMock = MockRepository.GenerateMock<ISpyLogger>();
-            senderMock = MockRepository.GenerateStub<IMessageSender>();
-        }
-
-
         [TestMethod]
         public void Index()
         {
-            // Arrange -- no dependendies - poor man's DI
-            HomeController controller = new HomeController(logMock, senderMock);
+            // Arrange
+            HomeController controller = new HomeController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -43,7 +29,7 @@ namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController(logMock, senderMock);
+            HomeController controller = new HomeController();
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -56,7 +42,7 @@ namespace Talks.CodeToDiFor.MVC5Web.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController(logMock, senderMock);
+            HomeController controller = new HomeController();
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;

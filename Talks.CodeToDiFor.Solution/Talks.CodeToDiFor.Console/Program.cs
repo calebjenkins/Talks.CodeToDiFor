@@ -9,11 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Talks.PCL.SuperSpyLib;
-using Talks.PCL.SuperSpyLib.Data;
-using Talks.PCL.SuperSpyLib.Imp;
-using Talks.PCL.SuperSpyLib.Rules;
-using Talks.PCL.SuperSpyLib.Rules.Shipping;
+using Talks.SuperSpyLib;
+using Talks.SuperSpyLib.Data;
+using Talks.SuperSpyLib.Imp;
+using Talks.SuperSpyLib.Rules;
+using Talks.SuperSpyLib.Rules.Shipping;
 
 namespace Talks.CodeToDiFor.ConsoleApp
 {

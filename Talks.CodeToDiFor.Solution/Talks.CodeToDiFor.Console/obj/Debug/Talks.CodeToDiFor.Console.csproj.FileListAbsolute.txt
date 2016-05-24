@@ -25,10 +25,12 @@ C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Ta
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Ninject.dll
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.dll
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.Net4.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.PCL.SuperSpyLib.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.PCL.SuperSpyLib.pdb
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Ninject.xml
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.ConsoleApp.exe
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.ConsoleApp.pdb
+C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.BetterSpyLib.dll
+C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.SuperSpyLib.dll
+C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.BetterSpyLib.pdb
+C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.SuperSpyLib.pdb
