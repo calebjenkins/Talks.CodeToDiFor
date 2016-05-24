@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.CodeToDiFor.MVC5Web", "Talks.CodeToDiFor.MVC5Web\Talks.CodeToDiFor.MVC5Web.csproj", "{206175A9-C627-42D8-ABD5-1A82D73DA677}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.CodeToDiFor.MVC5Web.Tests", "Talks.CodeToDiFor.MVC5Web.Tests\Talks.CodeToDiFor.MVC5Web.Tests.csproj", "{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.PCL.SuperSpyLib", "Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj", "{5ADF95E7-576B-4D8E-9BD5-5FE6E88E2A82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.PCL.BetterSpyLib", "Talks.PCL.BetterSpyLib\Talks.PCL.BetterSpyLib.csproj", "{A9464C18-3F46-46A3-A750-7D4B1BC4590C}"
@@ -21,14 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{206175A9-C627-42D8-ABD5-1A82D73DA677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{206175A9-C627-42D8-ABD5-1A82D73DA677}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{206175A9-C627-42D8-ABD5-1A82D73DA677}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{206175A9-C627-42D8-ABD5-1A82D73DA677}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2EFFBD3-518F-4A03-AD5C-BC4FA0F94ACA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5ADF95E7-576B-4D8E-9BD5-5FE6E88E2A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5ADF95E7-576B-4D8E-9BD5-5FE6E88E2A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ADF95E7-576B-4D8E-9BD5-5FE6E88E2A82}.Release|Any CPU.ActiveCfg = Release|Any CPU

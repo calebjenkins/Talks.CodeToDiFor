@@ -97,10 +97,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Talks.CodeToDiFor.MVC5Web\Talks.CodeToDiFor.MVC5Web.csproj">
-      <Project>{206175A9-C627-42D8-ABD5-1A82D73DA677}</Project>
-      <Name>Talks.CodeToDiFor.MVC5Web</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Talks.PCL.SuperSpyLib\Talks.PCL.SuperSpyLib.csproj">
       <Project>{5adf95e7-576b-4d8e-9bd5-5fe6e88e2a82}</Project>
       <Name>Talks.PCL.SuperSpyLib</Name>

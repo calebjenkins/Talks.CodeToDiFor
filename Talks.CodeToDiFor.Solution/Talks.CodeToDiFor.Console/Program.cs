@@ -85,6 +85,10 @@ namespace Talks.CodeToDiFor.ConsoleApp
                 Console.WriteLine("\t\t - " + rule.RuleName());
             }
 
+            //Console.Write("Shipping Rule:");
+            //var r = container.Get<IRule>();
+            //Console.WriteLine(r.RuleName());
+
             Console.Write("\n\tDI Done.");
             Console.ReadLine();
         }
