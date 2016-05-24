@@ -1,9 +1,0 @@
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\bin\Debug\Talks.PCL.SuperSpyLib.dll
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\bin\Debug\Talks.PCL.SuperSpyLib.pdb
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\obj\Debug\Talks.PCL.SuperSpyLib.dll
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\obj\Debug\Talks.PCL.SuperSpyLib.pdb
-C:\Users\cjenk\Source\Repos\talks.code-to-die-for\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\obj\Debug\Talks.PCL.SuperSpyLib.csprojResolveAssemblyReference.cache
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\bin\Debug\Talks.PCL.SuperSpyLib.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\bin\Debug\Talks.PCL.SuperSpyLib.pdb
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\obj\Debug\Talks.PCL.SuperSpyLib.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.PCL.SuperSpyLib\obj\Debug\Talks.PCL.SuperSpyLib.pdb

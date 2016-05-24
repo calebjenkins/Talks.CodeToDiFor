@@ -1,1 +1,0 @@
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.MVC5Web.Tests\obj\Debug\Talks.CodeToDiFor.MVC5Web.Tests.csprojResolveAssemblyReference.cache
