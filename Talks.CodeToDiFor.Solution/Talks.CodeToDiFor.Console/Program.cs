@@ -21,13 +21,13 @@ namespace Talks.CodeToDiFor.ConsoleApp
     {
         static void Main(string[] args)
         {
-            DoConsoleApp();
+            //DoConsoleApp();
 
             //ConsoleWithDI();
 
             //ConsoleWithCslDI();
 
-            //ConsoleWithSM_CSL_DI();
+            ConsoleWithSM_CSL_DI();
         }
 
         static void DoConsoleApp()
@@ -123,7 +123,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
         static void ConsoleWithCslDI()
         {
             // DI //
-            var container = getCslContainer();
+            var container =  getCslContainer(); 
             var senderDI = container.GetInstance<IMessageSender>();
 
 

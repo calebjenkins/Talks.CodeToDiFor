@@ -9,7 +9,14 @@ namespace Talks.SuperSpyLib.Imp
     {
         ISpyLogger logger;
         ISpyDataLayer data;
-        //IShippingCalculator calc;
+        IShippingCalculator calc;
+
+        public MessageSender(ISpyLogger logger, ISpyDataLayer data, IShippingCalculator calc)
+        {
+            this.logger = logger;
+            this.data = data;
+            this.calc = calc;
+        }
 
         //public MessageSender()
         //{
@@ -40,8 +47,8 @@ namespace Talks.SuperSpyLib.Imp
 
         public void Send(string Message)
         {
-            //logger.Log("Calculating Shipping Costs");
-            //var shippingCost = calc.CalculateCost(Message, 10.0m);
+            logger.Log("Calculating Shipping Costs");
+            var shippingCost = calc.CalculateCost(Message, 10.0m);
 
             logger.Log("Message was sent: " + Message);
             data.update("Store in db: " + Message);
