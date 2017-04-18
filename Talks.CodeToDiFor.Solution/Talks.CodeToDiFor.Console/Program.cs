@@ -1,9 +1,4 @@
-﻿using CommonServiceLocator.NinjectAdapter;
-using CommonServiceLocator.NinjectAdapter.Unofficial;
-using CommonServiceLocator.StructureMapAdapter.Unofficial;
-using Microsoft.Practices.ServiceLocation;
-using Ninject;
-using StructureMap;
+﻿using StructureMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,197 +12,105 @@ using Talks.SuperSpyLib.Rules.Shipping;
 
 namespace Talks.CodeToDiFor.ConsoleApp
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //DoConsoleApp();
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			// Input -> MessageSender + Logger -> Shipping Calc + Shipping Rules -> Data + Encryptor 
 
-            //ConsoleWithDI();
+			Console.WriteLine("\n\t* * * Spy Message Sender * * *");
+			Console.Write("\n\tMessage:");
+			var input = Console.ReadLine();
 
-            //ConsoleWithCslDI();
+			{
+				var messages = DoConsoleApp_Manual_DI(input);
+				//var messages = ConsoleWithSMContainer (input);
 
-            ConsoleWithSM_CSL_DI();
-        }
+				Console.WriteLine("\n\tLogger Output:");
+				foreach (var msg in messages)
+				{
+					Console.WriteLine("\t\t - " + msg);
+				}
+			}
 
-        static void DoConsoleApp()
-        {
-            Console.WriteLine("\n\t* * * Spy Message Sender * * *");
-            Console.Write("\n\tMessage:");
-            var input = Console.ReadLine();
+			Console.Write("\n\tDone.");
+			Console.ReadLine();
+		}
 
-            ISpyLogger logger = new SpyLogger();
-            IEncrypter enc = new Encrypter(logger);
-            ISpyDataLayer data = new SpyDataLayer(logger, enc);
+		static IEnumerable<string> DoConsoleApp_Manual_DI(string input)
+		{
+			// Input -> MessageSender + Logger -> Shipping Calc + Shipping Rules -> Data + Encryptor 
 
-            IMessageSender sender = new MessageSender(logger, data);
-            sender.Send(input);
+			ILogger logger = new Logger();
+			IEncrypter enc = new Encrypter(logger);
+			IDataLayer data = new DataLayer(logger, enc);
+			var rules = ComposeShippingRules();
+			IShippingCalculator calc = new ShippingCalculator(logger, rules);
 
+			IMessageSender sender = new MessageSender(logger, data, calc);
+			sender.Send(input);
 
-            Console.WriteLine("\tLogger Output:");
-            var msgs = logger.GetMessages();
-            foreach (var msg in msgs)
-            {
-                Console.WriteLine("\t\t - " + msg);
-            }
+			Console.WriteLine("\n\tRules:");
+			foreach (var rule in rules)
+			{
+				Console.WriteLine("\t\t - " + rule.RuleName());
+			}
 
-            Console.Write("\n\tDone.");
-            Console.ReadLine();
-        }
+			return logger.GetMessages();
+		}
+		private static IList<IShippingRule> ComposeShippingRules()
+		{
+			return new List<IShippingRule>()
+			{
+				new EconomyShippingDiscountRule(),
+				new ExtraLargeShippingRule(),
+				new GodSaveTheQueenShippingRule()
+				//new HurryHurryShippingRule(),
+				//new RushOrderShippingRule()
+			};
+		}
 
-        static void ConsoleWithDI()
-        {
-            // DI //
-            var container = getContainer();
-            var senderDI = container.Get<IMessageSender>();
+		static IEnumerable<string> ConsoleWithSMContainer(string input)
+		{
+			// DI //
+			var container = GetContainer();
+			var sender = container.GetInstance<IMessageSender>();
+			var logger = container.GetInstance<ILogger>();
 
+			sender.Send(input);
 
-            var loggerDI = container.Get<ISpyLogger>();
-            Console.WriteLine("\n\t* * * Spy Message Sender with DI * * *");
-            Console.Write("\n\tDI Message:");
-            var inputDI = Console.ReadLine();
+			// Collections // - Show Singleton before Collection
+			//var rules = container.GetAllInstances<IRule>();
+			var rules = container.GetAllInstances<IShippingRule>();
+			Console.WriteLine("\n\tRules:");
+			foreach (var rule in rules)
+			{
+				Console.WriteLine("\t\t - " + rule.RuleName());
+			}
 
-            senderDI.Send(inputDI);
+			//Console.Write("Shipping Rule:");
+			//var r = container.Get<IRule>();
+			//Console.WriteLine(r.RuleName());
 
-            Console.WriteLine("\tDI Logger Output:");
-            var msgsDI = loggerDI.GetMessages();
+			return logger.GetMessages();
+		}
+		static IContainer GetContainer()
+		{
+			IContainer container = new Container(); // StructureMap
+			container.Configure(x =>
+			{
+				//x.For<ISpyLogger>().Use<SpyLogger>(); //.Singleton();
 
-            foreach (var msg in msgsDI)
-            {
-                Console.WriteLine("\t\t - " + msg);
-            }
+				x.Scan(scan =>
+				{
+					scan.AssemblyContainingType(typeof(ILogger));
+					scan.WithDefaultConventions();
+					scan.AddAllTypesOf<IShippingRule>();
+					scan.AddAllTypesOf<IRule>();
+				});
+			});
 
-            // Collections // - Show Singleton before Collection
-            var rules = container.GetAll<IRule>();
-            Console.WriteLine("\tRules:");
-            foreach (var rule in rules)
-            {
-                Console.WriteLine("\t\t - " + rule.RuleName());
-            }
-
-            //Console.Write("Shipping Rule:");
-            //var r = container.Get<IRule>();
-            //Console.WriteLine(r.RuleName());
-
-            Console.Write("\n\tDI Done.");
-            Console.ReadLine();
-        }
-        static IKernel getContainer()
-        {
-            IKernel container = new StandardKernel();
-            container.Bind<ISpyLogger>().To<SpyLogger>().InSingletonScope(); // Singleton
-            container.Bind<IEncrypter>().To<Encrypter>();
-            container.Bind<ISpyDataLayer>().To<SpyDataLayer>();
-            container.Bind<IMessageSender>().To<MessageSender>();
-            container.Bind<IShippingCalculator>().To<ShippingCalculator>();
-
-
-            // James Bond Rules // 
-            container.Bind<IRule>().To<JamesBondRule>();
-            container.Bind<IRule>().To<FavoriteBondRule>();
-            container.Bind<IRule>().To<WorstBondRule>();
-            container.Bind<IRule>().To<BestJamesBondRule>();
-            container.Bind<IRule>().To<NewestBondRule>();
-
-            // Shipping Rules
-            container.Bind<IShippingRule>().To<EconomyShippingDiscountRule>();
-            container.Bind<IShippingRule>().To<ExtraLargeShippingRule>();
-            container.Bind<IShippingRule>().To<GodSaveTheQueenShippingRule>();
-            container.Bind<IShippingRule>().To<HurryHurryShippingRule>();
-            container.Bind<IShippingRule>().To<RushOrderShippingRule>();
-
-
-            return container;
-        }
-
-        static void ConsoleWithCslDI()
-        {
-            // DI //
-            var container =  getCslContainer(); 
-            var senderDI = container.GetInstance<IMessageSender>();
-
-
-            var loggerDI = container.GetInstance<ISpyLogger>();
-            Console.WriteLine("\n\t* * * Spy Message Sender with DI via CSL Adapter * * *");
-            Console.Write("\n\tCSL DI Message:");
-            var inputDI = Console.ReadLine();
-
-            senderDI.Send(inputDI);
-
-            Console.WriteLine("\tDI Logger Output:");
-            var msgsDI = loggerDI.GetMessages();
-
-            foreach (var msg in msgsDI)
-            {
-                Console.WriteLine("\t\t - " + msg);
-            }
-
-            // Collections //
-            var rules = container.GetAllInstances<IRule>();
-            Console.WriteLine("\tRules:");
-            foreach (var rule in rules)
-            {
-                Console.WriteLine("\t\t - " + rule.RuleName());
-            }
-
-            Console.Write("\n\tDI Done.");
-            Console.ReadLine();
-        }
-        static IServiceLocator getCslContainer()
-        {
-            return new NinjectServiceLocator(getContainer());
-        }
-
-        static void ConsoleWithSM_CSL_DI()
-        {
-            // DI //
-            var container = getCslSmContainer();
-            var senderDI = container.GetInstance<IMessageSender>();
-
-
-            var loggerDI = container.GetInstance<ISpyLogger>();
-            Console.WriteLine("\n\t* * * Spy Message Sender with DI via CSL Adapter with StructureMap * * *");
-            Console.Write("\n\tCSL DI Message:");
-            var inputDI = Console.ReadLine();
-
-            senderDI.Send(inputDI);
-
-            Console.WriteLine("\tDI Logger Output:");
-            var msgsDI = loggerDI.GetMessages();
-
-            foreach (var msg in msgsDI)
-            {
-                Console.WriteLine("\t\t - " + msg);
-            }
-
-            // Collections //
-            var rules = container.GetAllInstances<IRule>();
-            Console.WriteLine("\tRules:");
-            foreach (var rule in rules)
-            {
-                Console.WriteLine("\t\t - " + rule.RuleName());
-            }
-
-            Console.Write("\n\tDI Done.");
-            Console.ReadLine();
-        }
-        static IServiceLocator getCslSmContainer()
-        {
-            IContainer container = new Container(); // StructureMap
-            container.Configure(x =>
-            {
-                x.For<ISpyLogger>().Use<SpyLogger>().Singleton();
-
-                x.Scan(scan =>
-                {
-                    scan.AssemblyContainingType(typeof(ISpyLogger));
-                    scan.WithDefaultConventions();
-                    scan.AddAllTypesOf<IShippingRule>();
-                    scan.AddAllTypesOf<IRule>();
-                });
-            });
-        
-            return new StructureMapServiceLocator(container);
-        }
-    }
+			return container;
+		}
+	}
 }

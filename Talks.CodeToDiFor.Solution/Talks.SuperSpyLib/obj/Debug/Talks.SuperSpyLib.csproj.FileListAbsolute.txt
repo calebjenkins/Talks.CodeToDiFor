@@ -3,3 +3,8 @@ C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Ta
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\obj\Debug\Talks.SuperSpyLib.dll
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\obj\Debug\Talks.SuperSpyLib.pdb
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\obj\Debug\Talks.SuperSpyLib.csprojResolveAssemblyReference.cache
+C:\Users\cjenkins2\Source\Repos\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\bin\Debug\Talks.SuperSpyLib.dll
+C:\Users\cjenkins2\Source\Repos\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\bin\Debug\Talks.SuperSpyLib.pdb
+C:\Users\cjenkins2\Source\Repos\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\obj\Debug\Talks.SuperSpyLib.dll
+C:\Users\cjenkins2\Source\Repos\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\obj\Debug\Talks.SuperSpyLib.pdb
+C:\Users\cjenkins2\Source\Repos\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.SuperSpyLib\obj\Debug\Talks.SuperSpyLib.csprojResolveAssemblyReference.cache

@@ -7,43 +7,17 @@ namespace Talks.SuperSpyLib.Imp
 {
     public class MessageSender : IMessageSender
     {
-        ISpyLogger logger;
-        ISpyDataLayer data;
+        ILogger logger;
+        IDataLayer data;
         IShippingCalculator calc;
 
-        public MessageSender(ISpyLogger logger, ISpyDataLayer data, IShippingCalculator calc)
+        public MessageSender(ILogger logger, IDataLayer data, IShippingCalculator calc)
         {
             this.logger = logger;
             this.data = data;
             this.calc = calc;
-        }
-
-        //public MessageSender()
-        //{
-        //    logger = new SpyLogger();
-        //    IEncrypter enc = new Encrypter(logger);
-        //    data = new SpyDataLayer(logger, enc);
-        //}
-
-        //public MessageSender(ISpyLogger logger)
-        //{
-        //    this.logger = logger;
-        //    IEncrypter enc = new Encrypter(logger);
-        //    data = new SpyDataLayer(logger, enc);
-        //}
-
-        public MessageSender(ISpyLogger logger, ISpyDataLayer Data)
-        {
-            this.logger = logger;
-            data = Data;
-        }
-
-        //public MessageSender(ISpyLogger logger, ISpyDataLayer data, IShippingCalculator calc)
-        //{
-        //    this.logger = logger;
-        //    this.data = data;
-        //    this.calc = calc;
-        //}
+			Console.Write(" -> MessageSender Ctr");
+		}
 
         public void Send(string Message)
         {

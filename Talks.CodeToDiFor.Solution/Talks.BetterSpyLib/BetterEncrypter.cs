@@ -9,12 +9,13 @@ namespace Talks.BetterSpyLib
     public class BetterEncrypter : IEncrypter
     {
 
-        ISpyLogger logger;
+        ILogger logger;
 
-        public BetterEncrypter(ISpyLogger logger)
+        public BetterEncrypter(ILogger logger)
         {
             this.logger = logger;
-        }
+			Console.Write(" -> BetterEncryption Ctr");
+		}
 
         public string Encrypt(string Message)
         {

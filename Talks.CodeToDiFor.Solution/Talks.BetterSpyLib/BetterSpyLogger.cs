@@ -6,7 +6,7 @@ using Talks.SuperSpyLib;
 
 namespace Talks.BetterSpyLib
 {
-    public class BetterSpyLogger : ISpyLogger
+    public class BetterSpyLogger : ILogger
     {
         private Stack<string> messages;
         private int count = 0;
@@ -14,7 +14,8 @@ namespace Talks.BetterSpyLib
         public BetterSpyLogger()
         {
             messages = new Stack<string>();
-        }
+			Console.Write(" -> BetterSpyLogger Ctr");
+		}
         public IEnumerable<string> GetMessages()
         {
             return messages;

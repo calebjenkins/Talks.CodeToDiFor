@@ -4,18 +4,20 @@ using System.Linq;
 
 namespace Talks.SuperSpyLib.Imp
 {
-    public class FakeLogger : ILogger
+    public class Logger : ILogger
     {
+
         private Stack<string> messages = new Stack<string>();
-		public FakeLogger()
+		public Logger()
 		{
-			Console.Write(" -> FakeLogger Ctr");
+			Console.Write(" -> Logger Ctr");
 		}
 
 		public IEnumerable<string> GetMessages()
         {
             return messages;
         }
+
         public Stack<string> GetMessagesStack()
         {
             return messages;
@@ -23,7 +25,7 @@ namespace Talks.SuperSpyLib.Imp
 
         public void Log(string Message)
         {
-            messages.Push("Fake Log: " + Message);
+            messages.Push("Logged: " + Message);
         }
     }
 }

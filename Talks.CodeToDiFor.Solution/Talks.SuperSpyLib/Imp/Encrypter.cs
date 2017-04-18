@@ -9,11 +9,13 @@ namespace Talks.SuperSpyLib.Imp
 {
     public class Encrypter : IEncrypter
     {
-        ISpyLogger logger;
-        public Encrypter(ISpyLogger logger)
+        ILogger logger;
+        public Encrypter(ILogger logger)
         {
             this.logger = logger;
-        }
+
+			Console.Write(" -> Encrypter Ctr");
+		}
 
         public string Encrypt(string Message)
         {

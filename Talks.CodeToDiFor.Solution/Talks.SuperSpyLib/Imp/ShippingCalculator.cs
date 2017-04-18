@@ -7,14 +7,15 @@ namespace Talks.SuperSpyLib.Imp
 {
     public class ShippingCalculator : IShippingCalculator
     {
-        ISpyLogger logger;
+        ILogger logger;
         IList<IShippingRule> rules;
 
-        public ShippingCalculator(ISpyLogger logger, IList<IShippingRule> rules)
+        public ShippingCalculator(ILogger logger, IList<IShippingRule> rules)
         {
             this.logger = logger;
             this.rules = rules;
-        }
+			Console.Write(" -> ShippingCalculator Ctr");
+		}
 
 
         public decimal CalculateCost(string Item, decimal BaseCost)
