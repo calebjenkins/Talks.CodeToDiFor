@@ -1,9 +1,6 @@
 ﻿using StructureMap;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Talks.SuperSpyLib;
 using Talks.SuperSpyLib.Data;
 using Talks.SuperSpyLib.Imp;
@@ -18,13 +15,13 @@ namespace Talks.CodeToDiFor.ConsoleApp
 		{
 			// Input -> MessageSender + Logger -> Shipping Calc + Shipping Rules -> Data + Encryptor 
 
-			Console.WriteLine("\n\t* * * Spy Message Sender * * *");
+			Console.WriteLine("\n\t* * * Message Sender * * *");
 			Console.Write("\n\tMessage:");
 			var input = Console.ReadLine();
 
 			{
 				var messages = DoConsoleApp_Manual_DI(input);
-				//var messages = ConsoleWithSMContainer (input);
+				//var messages = ConsoleWithSMContainer(input);
 
 				Console.WriteLine("\n\tLogger Output:");
 				foreach (var msg in messages)
@@ -44,7 +41,15 @@ namespace Talks.CodeToDiFor.ConsoleApp
 			ILogger logger = new Logger();
 			IEncrypter enc = new Encrypter(logger);
 			IDataLayer data = new DataLayer(logger, enc);
-			var rules = ComposeShippingRules();
+			var rules = new List<IShippingRule>()
+			{
+				new EconomyShippingDiscountRule(),
+				new ExtraLargeShippingRule(),
+				new GodSaveTheQueenShippingRule()
+				//new HurryHurryShippingRule(),
+				//new RushOrderShippingRule()
+			};
+
 			IShippingCalculator calc = new ShippingCalculator(logger, rules);
 
 			IMessageSender sender = new MessageSender(logger, data, calc);
@@ -58,29 +63,15 @@ namespace Talks.CodeToDiFor.ConsoleApp
 
 			return logger.GetMessages();
 		}
-		private static IList<IShippingRule> ComposeShippingRules()
-		{
-			return new List<IShippingRule>()
-			{
-				new EconomyShippingDiscountRule(),
-				new ExtraLargeShippingRule(),
-				new GodSaveTheQueenShippingRule()
-				//new HurryHurryShippingRule(),
-				//new RushOrderShippingRule()
-			};
-		}
 
 		static IEnumerable<string> ConsoleWithSMContainer(string input)
 		{
 			// DI //
 			var container = GetContainer();
 			var sender = container.GetInstance<IMessageSender>();
-			var logger = container.GetInstance<ILogger>();
-
 			sender.Send(input);
 
 			// Collections // - Show Singleton before Collection
-			//var rules = container.GetAllInstances<IRule>();
 			var rules = container.GetAllInstances<IShippingRule>();
 			Console.WriteLine("\n\tRules:");
 			foreach (var rule in rules)
@@ -88,18 +79,18 @@ namespace Talks.CodeToDiFor.ConsoleApp
 				Console.WriteLine("\t\t - " + rule.RuleName());
 			}
 
-			//Console.Write("Shipping Rule:");
-			//var r = container.Get<IRule>();
-			//Console.WriteLine(r.RuleName());
-
-			return logger.GetMessages();
+			return container.GetInstance<ILogger>().GetMessages();
 		}
 		static IContainer GetContainer()
 		{
 			IContainer container = new Container(); // StructureMap
 			container.Configure(x =>
 			{
-				//x.For<ISpyLogger>().Use<SpyLogger>(); //.Singleton();
+				x.For<IMessageSender>().Use<MessageSender>();
+				x.For<ILogger>().Use<Logger>(); //.Singleton();
+				x.For<IEncrypter>().Use<Encrypter>();
+				x.For<IShippingCalculator>().Use<ShippingCalculator>();
+				x.For<IDataLayer>().Use<DataLayer>();
 
 				x.Scan(scan =>
 				{
