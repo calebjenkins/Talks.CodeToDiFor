@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Talks.C2DF.Interfaces;
 
-namespace Talks.C2DF.BetterApp
+namespace Talks.C2DF.BetterApp.Lib
 {
 	public class CostCalculator: ICostCalculator
 	{
