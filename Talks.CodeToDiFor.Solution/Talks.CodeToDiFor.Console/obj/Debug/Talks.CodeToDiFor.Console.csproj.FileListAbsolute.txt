@@ -34,3 +34,16 @@ C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Ta
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.SuperSpyLib.dll
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.BetterSpyLib.pdb
 C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.SuperSpyLib.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.CodeToDiFor.ConsoleApp.exe.config
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.CodeToDiFor.ConsoleApp.exe
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.CodeToDiFor.ConsoleApp.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.Console.csproj.CoreCompileInputs.cache
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.ConsoleApp.exe
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.ConsoleApp.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\obj\Debug\Talks.CodeToDiFor.Console.csprojResolveAssemblyReference.cache
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.NotSoSuperLib.dll
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.Interfaces.dll
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.NotSoSuperLib.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.Interfaces.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.dll
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.xml
