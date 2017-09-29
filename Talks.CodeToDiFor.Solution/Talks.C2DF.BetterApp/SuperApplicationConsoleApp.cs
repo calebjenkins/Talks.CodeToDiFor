@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Talks.C2DF.BetterApp.Lib;
+using Talks.C2DF.BetterApp.Lib.Console;
 using Talks.C2DF.Interfaces;
 
 namespace Talks.C2DF.BetterApp
@@ -9,12 +9,12 @@ namespace Talks.C2DF.BetterApp
 	{
 
 		readonly ISuperApplication _senderApp;
-		readonly IWriter console;
+		readonly IConsole console;
 
-		public SuperApplicationConsoleApp(ISuperApplication senderApp, IWriter writer)
+		public SuperApplicationConsoleApp(ISuperApplication senderApp, IConsole consuleWriter)
 		{
 			_senderApp = senderApp ?? throw new ArgumentNullException(nameof(senderApp), $"{nameof(senderApp)} is null.");
-			console = writer ?? throw new ArgumentNullException(nameof(writer), $"{nameof(writer)} is null.");
+			console = consuleWriter ?? throw new ArgumentNullException(nameof(consuleWriter), $"{nameof(consuleWriter)} is null.");
 		}
 
 		public void Run()
@@ -23,19 +23,19 @@ namespace Talks.C2DF.BetterApp
 
 			while (key != ConsoleKey.Spacebar)
 			{
-				var startColor = Console.ForegroundColor;
+				var startColor = console.ForegroundColor;
 
 				console.WriteLine(" ** Starting App ** DI Friendly Lib **");
 				console.Write("Enter Message:");
-				var msg = Console.ReadLine();
+				var msg = console.ReadLine();
 
 				console.WriteLine();
 				console.WriteLine("Output:");
-				Console.ForegroundColor = ConsoleColor.Blue;
+				console.ForegroundColor = ConsoleColor.Blue;
 
 				var result = _senderApp.Send(msg);
 
-				Console.ForegroundColor = startColor;
+				console.ForegroundColor = startColor;
 
 				console.WriteLine();
 				console.WriteLine($"Result: {result.Price} ");
@@ -47,9 +47,9 @@ namespace Talks.C2DF.BetterApp
 				console.WriteLine(" ** Complete **");
 				console.WriteLine(" ** Space bar to Exit **");
 
-				key = Console.ReadKey().Key;
+				key = console.ReadKey().Key;
 
-				Console.Clear();
+				console.Clear();
 			}
 		}
 	}

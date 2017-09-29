@@ -3,6 +3,7 @@ using System;
 using Ext = Talks.C2DF.Interfaces.ExternalLibrary;
 using Talks.C2DF.Interfaces;
 using Talks.C2DF.BetterApp.Lib;
+using Talks.C2DF.BetterApp.Lib.Console;
 using Talks.C2DF.BetterApp.Lib.Logging;
 
 namespace Talks.C2DF.BetterApp

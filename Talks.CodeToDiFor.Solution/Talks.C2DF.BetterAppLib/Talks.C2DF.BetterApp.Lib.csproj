@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleWriter.cs" />
-    <Compile Include="DebugWriter.cs" />
-    <Compile Include="IWriter.cs" />
+    <Compile Include="Console\ConsoleWriter.cs" />
+    <Compile Include="Console\DebugWriter.cs" />
+    <Compile Include="Console\IConsole.cs" />
+    <Compile Include="Console\IWriter.cs" />
     <Compile Include="CostCalculator.cs" />
     <Compile Include="ExternalLogAdapter.cs" />
     <Compile Include="Logging\ILogger.cs" />

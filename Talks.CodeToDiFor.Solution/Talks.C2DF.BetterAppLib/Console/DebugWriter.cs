@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Talks.C2DF.BetterApp.Lib
+namespace Talks.C2DF.BetterApp.Lib.Console
 {
 	public class DebugWriter: IWriter
 	{

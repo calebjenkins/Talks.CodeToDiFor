@@ -1,6 +1,7 @@
 ﻿using System;
 using Talks.C2DF.BetterApp;
 using Talks.C2DF.BetterApp.Lib;
+using Talks.C2DF.BetterApp.Lib.Console;
 using Talks.C2DF.Interfaces;
 using nope = Talks.C2DF.NotSoSuperLib;
 using external = Talks.C2DF.Interfaces.ExternalLibrary;
