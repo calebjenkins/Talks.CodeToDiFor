@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Talks.C2DF.Interfaces;
+using Talks.C2DF.Interfaces.Models;
 
 namespace Talks.C2DF.BetterApp.Rules
 {
-	public class SmallSizeRule : ICostRule
+	public class SmallSizeBasePriceRule : IBasePriceRule
 	{
 		public string RuleName => "Small Size Rule";
 
-		public bool AppliesTo(string message)
+		public bool AppliesTo(MessageForProcessing Message)
 		{
-			return (message.Length < 5);
+			return (Message.Weight < 5);
 		}
 
-		public int Apply(string Message, int currentCost)
+		public int Apply(MessageForProcessing Message)
 		{
 			return 4;
 		}

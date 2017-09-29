@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Talks.C2DF.NotSoSuperLib;
-using Talks.C2DF.NotSoSuperLib.Lib;
+using notThisWay = Talks.C2DF.NotSoSuperLib;
 
 namespace Talks.CodeToDiFor.ConsoleApp
 {
 	class Program
 	{
 
-	//	Application -> Sender -> Cost Calc -> Encrypter -> Send (with Retry)
+	//	Application -> Sender -> Cost Calc -> Encryptor -> Send (with Retry)
 	//  <- SendResponse
 
 		static void Main(string[] args)
 		{
-			Console.WriteLine(" ** Starting App **");
-			Console.Write("Enter Message:");
-			var msg = Console.ReadLine();
+			TraditionalConsoleApp();
+		}
 
-			var senderApp = new NotSoGreatApp();
-			var result = senderApp.Send(msg);
+		static void TraditionalConsoleApp()
+		{
+			var app = new notThisWay.NotSoGreatConsoleApp();
+			app.Run();
+		}
 
-
-			Console.Write(" ** Complete **");
-			Console.ReadLine();
+		static void CompositeRootConsoleApp()
+		{
+			
 		}
 	}
 }

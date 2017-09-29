@@ -2,30 +2,58 @@
 using System.Collections.Generic;
 using System.Linq;
 using Talks.C2DF.Interfaces;
+using Talks.C2DF.Interfaces.Models;
 
 namespace Talks.C2DF.BetterApp.Lib
 {
 	public class CostCalculator: ICostCalculator
 	{
-		IList<ICostRule> _costRules;
-		public CostCalculator(IList<ICostRule> costRules)
+		readonly IList<IBasePriceRule> _basePriceRules;
+		readonly IList<IExtendedPriceRule> _extendedPriceRules;
+
+
+		public CostCalculator(IList<IBasePriceRule> basePriceRules, IList<IExtendedPriceRule> extendedPriceRules)
 		{
-			_costRules = costRules;
+			_basePriceRules = basePriceRules;
+			_extendedPriceRules = extendedPriceRules;
 		}
 
 		public int CalculatePrice(string message)
 		{
-			int price = 0;
-			foreach (var costRule in _costRules)
+			var msg = new MessageForProcessing()
 			{
-				if (costRule.AppliesTo(message))
+				Text = message,
+				CurrentPrice = 0,
+				Weight = CalculateWeight(message)
+			};
+
+			// Base Price
+			foreach (var costRule in _basePriceRules)
+			{
+				if (costRule.AppliesTo(msg))
 				{
 					Console.WriteLine($"Applying Rule: {costRule.RuleName}");
-					price = costRule.Apply(message, price);
+					msg.CurrentPrice = costRule.Apply(msg);
 				}
 			}
 
-			return price;
+			// Extended Prices
+			foreach (var ExtRule in _extendedPriceRules)
+			{
+				if (ExtRule.AppliesTo(msg))
+				{
+					Console.WriteLine($"Applying Rule: {ExtRule.RuleName}");
+					msg.CurrentPrice = ExtRule.Apply(msg);
+				}
+			}
+
+			return msg.CurrentPrice;
+		}
+
+		// Not in Interface - but still unit testable for this implementation
+		public int CalculateWeight(string message)
+		{
+			return message.Length;
 		}
 	}
 }

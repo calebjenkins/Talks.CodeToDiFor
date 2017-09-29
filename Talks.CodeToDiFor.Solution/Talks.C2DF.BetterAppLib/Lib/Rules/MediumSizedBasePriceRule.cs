@@ -5,18 +5,18 @@ using Talks.C2DF.Interfaces.Models;
 
 namespace Talks.C2DF.BetterApp.Rules
 {
-	public class UrgentMessageRule: IExtendedPriceRule
+	public class MediumSizedBasePriceRule: IBasePriceRule
 	{
-		public string RuleName => "Urgent Message Rule";
+		public string RuleName => "Medium Sized Rule";
 
 		public bool AppliesTo(MessageForProcessing Message)
 		{
-			return (Message.Text.Contains("!") && !Message.Text.Contains("!!!"));
+			return (Message.Weight > 4 && Message.Weight < 10);
 		}
 
 		public int Apply(MessageForProcessing Message)
 		{
-			return Message.CurrentPrice * 2;
+			return 5;
 		}
 	}
 }

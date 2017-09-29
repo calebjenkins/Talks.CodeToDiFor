@@ -44,6 +44,7 @@
     <Compile Include="Lib\Encryptor.cs" />
     <Compile Include="Lib\Sender.cs" />
     <Compile Include="NotSoGreatApp.cs" />
+    <Compile Include="NotSoGreatConsoleApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
