@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Linq;
-using Talks.C2DF.Interfaces.ExternalLibrary;
 
-namespace Talks.C2DF.Interfaces
+namespace Talks.C2DF.BetterApp.Lib.Logging
 {
 	public interface ILogger
 	{

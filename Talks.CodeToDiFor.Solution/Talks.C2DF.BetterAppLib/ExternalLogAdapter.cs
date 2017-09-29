@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
-using Talks.C2DF.Interfaces.ExternalLibrary;
-using Inter = Talks.C2DF.Interfaces;
+using Talks.C2DF.Interfaces.ExternalLibrary; // External Extension Methods
 
 namespace Talks.C2DF.BetterApp.Lib
 {
-	public class ExternalLogAdapter: Inter.ILogger
+	public class ExternalLogAdapter: Logging.ILogger
 	{
 		readonly ILogger _logger;
 		public ExternalLogAdapter(ILogger logger)

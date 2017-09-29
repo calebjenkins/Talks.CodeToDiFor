@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Talks.C2DF.Interfaces.ExternalLibrary
 {
-	public class Logger: ILogger
+	public class DebugLogger: ILogger
 	{
 		int logId = 0;
 
@@ -26,7 +26,7 @@ namespace Talks.C2DF.Interfaces.ExternalLibrary
 
 		public void Log(LogEntry logEntry)
 		{
-			Console.WriteLine($"Ext Logger -{logEntry.LogType}- ({logId++}): {logEntry.Message}");
+			System.Diagnostics.Debug.WriteLine($"Ext Logger -{logEntry.LogType}- ({logId++}): {logEntry.Message}");
 		}
 	}
 }

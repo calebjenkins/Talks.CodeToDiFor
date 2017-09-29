@@ -3,7 +3,7 @@ using System.Linq;
 using Talks.C2DF.Interfaces;
 using Talks.C2DF.Interfaces.Models;
 
-namespace Talks.C2DF.BetterApp.Rules
+namespace Talks.C2DF.BetterApp.Lib.Rules
 {
 	public class ReallyUrgentMessageExtendedPriceRule: IExtendedPriceRule
 	{

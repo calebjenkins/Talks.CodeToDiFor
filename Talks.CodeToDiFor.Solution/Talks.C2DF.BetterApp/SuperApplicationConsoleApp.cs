@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Talks.C2DF.BetterApp.Lib;
 using Talks.C2DF.Interfaces;
 
 namespace Talks.C2DF.BetterApp
@@ -24,7 +25,7 @@ namespace Talks.C2DF.BetterApp
 			{
 				var startColor = Console.ForegroundColor;
 
-				console.WriteLine(" ** Starting App ** Not so great lib **");
+				console.WriteLine(" ** Starting App ** DI Friendly Lib **");
 				console.Write("Enter Message:");
 				var msg = Console.ReadLine();
 

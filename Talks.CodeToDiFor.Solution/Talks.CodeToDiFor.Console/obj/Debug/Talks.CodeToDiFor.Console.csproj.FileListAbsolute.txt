@@ -47,3 +47,7 @@ C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Cons
 C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.Interfaces.pdb
 C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.dll
 C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\StructureMap.xml
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.dll
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.Lib.dll
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.Lib.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.pdb

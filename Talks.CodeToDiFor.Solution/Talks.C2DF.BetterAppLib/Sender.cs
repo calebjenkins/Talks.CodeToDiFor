@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Talks.C2DF.Interfaces;
+using Talks.C2DF.Interfaces.ExternalLibrary;
 
 namespace Talks.C2DF.BetterApp.Lib
 {
@@ -21,7 +18,7 @@ namespace Talks.C2DF.BetterApp.Lib
 		public void Send(string message)
 		{
 			var xMsg = _crypto.Encrypt(message);
-			_logger.Info($"Message Sent: {xMsg}");
+			_logger.Info($"Message Sent: {xMsg}"); // Extension Methods from External Library
 		}
 	}
 }

@@ -3,20 +3,20 @@ using System.Linq;
 using Talks.C2DF.Interfaces;
 using Talks.C2DF.Interfaces.Models;
 
-namespace Talks.C2DF.BetterApp.Rules
+namespace Talks.C2DF.BetterApp.Lib.Rules
 {
-	public class SpecialDealExtendedPriceRule: IExtendedPriceRule
+	public class MediumSizedBasePriceRule: IBasePriceRule
 	{
-		public string RuleName => "Half off Deal";
+		public string RuleName => "Medium Sized Rule";
 
 		public bool AppliesTo(MessageForProcessing Message)
 		{
-			return (Message.Text.Contains("DEAL"));
+			return (Message.Weight > 4 && Message.Weight < 10);
 		}
 
 		public int Apply(MessageForProcessing Message)
 		{
-			return Message.CurrentPrice / 2;
+			return 5;
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Talks.C2DF.BetterApp.Lib.Logging;
 using Talks.C2DF.Interfaces;
 using Talks.C2DF.Interfaces.Models;
 
@@ -10,12 +11,16 @@ namespace Talks.C2DF.BetterApp.Lib
 	{
 		readonly IList<IBasePriceRule> _basePriceRules;
 		readonly IList<IExtendedPriceRule> _extendedPriceRules;
+		readonly ILogger _logger;
 
 
-		public CostCalculator(IList<IBasePriceRule> basePriceRules, IList<IExtendedPriceRule> extendedPriceRules)
+		public CostCalculator(IList<IBasePriceRule> basePriceRules, IList<IExtendedPriceRule> extendedPriceRules, ILogger logger)
 		{
 			_basePriceRules = basePriceRules;
 			_extendedPriceRules = extendedPriceRules;
+			_logger = logger;
+
+			logger.Info($"Rules Loaded: Base Price Rules ({_basePriceRules.Count() }) Extended Price Rules ({_extendedPriceRules.Count() }) --");
 		}
 
 		public int CalculatePrice(string message)
