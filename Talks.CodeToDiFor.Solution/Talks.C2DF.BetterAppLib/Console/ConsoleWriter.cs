@@ -23,12 +23,19 @@ namespace Talks.C2DF.BetterApp.Lib.Console
 		}
 
 		// IWriter
-		public void Write(string text = "")
+		public void Write()
+		{
+			Write("");
+		}
+		public void Write(string text)
 		{
 			System.Console.Write(text);
 		}
-
-		public void WriteLine(string text = "")
+		public void WriteLine()
+		{
+			WriteLine("");
+		}
+		public void WriteLine(string text)
 		{
 			System.Console.WriteLine(text);
 		}

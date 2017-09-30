@@ -36,7 +36,8 @@ namespace Talks.C2DF.NotSoSuperLib
 				Console.WriteLine(" ** Complete **");
 				Console.WriteLine(" ** Space bar to Exit **");
 
-				key = Console.ReadKey().Key;
+				var kInfo = Console.ReadKey();
+				key = kInfo.Key;
 
 				Console.Clear();
 			}

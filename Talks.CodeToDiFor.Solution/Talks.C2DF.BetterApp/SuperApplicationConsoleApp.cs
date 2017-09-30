@@ -9,12 +9,12 @@ namespace Talks.C2DF.BetterApp
 	{
 
 		readonly ISuperApplication _senderApp;
-		readonly IConsole console;
+		readonly IConsole _console;
 
-		public SuperApplicationConsoleApp(ISuperApplication senderApp, IConsole consuleWriter)
+		public SuperApplicationConsoleApp(ISuperApplication senderApp, IConsole consoleWriter)
 		{
 			_senderApp = senderApp ?? throw new ArgumentNullException(nameof(senderApp), $"{nameof(senderApp)} is null.");
-			console = consuleWriter ?? throw new ArgumentNullException(nameof(consuleWriter), $"{nameof(consuleWriter)} is null.");
+			_console = consoleWriter ?? throw new ArgumentNullException(nameof(consoleWriter), $"{nameof(consoleWriter)} is null.");
 		}
 
 		public void Run()
@@ -23,33 +23,33 @@ namespace Talks.C2DF.BetterApp
 
 			while (key != ConsoleKey.Spacebar)
 			{
-				var startColor = console.ForegroundColor;
+				var startColor = _console.ForegroundColor;
 
-				console.WriteLine(" ** Starting App ** DI Friendly Lib **");
-				console.Write("Enter Message:");
-				var msg = console.ReadLine();
+				_console.WriteLine(" ** Starting App ** DI Friendly Lib **");
+				_console.Write("Enter Message:");
+				var msg = _console.ReadLine();
 
-				console.WriteLine();
-				console.WriteLine("Output:");
-				console.ForegroundColor = ConsoleColor.Blue;
+				_console.WriteLine();
+				_console.WriteLine("Output:");
+				_console.ForegroundColor = ConsoleColor.Blue;
 
 				var result = _senderApp.Send(msg);
 
-				console.ForegroundColor = startColor;
+				_console.ForegroundColor = startColor;
 
-				console.WriteLine();
-				console.WriteLine($"Result: {result.Price} ");
-				console.WriteLine($"    Price: {result.Price} ");
-				console.WriteLine($"    Message: {result.Message} ");
-				console.WriteLine($"    Result Message: {result.ResultMessage} ");
+				_console.WriteLine();
+				_console.WriteLine($"Result: {result.Price} ");
+				_console.WriteLine($"    Price: {result.Price} ");
+				_console.WriteLine($"    Message: {result.Message} ");
+				_console.WriteLine($"    Result Message: {result.ResultMessage} ");
 
 
-				console.WriteLine(" ** Complete **");
-				console.WriteLine(" ** Space bar to Exit **");
+				_console.WriteLine(" ** Complete **");
+				_console.WriteLine(" ** Space bar to Exit **");
 
-				key = console.ReadKey().Key;
+				key = _console.ReadKey().Key;
 
-				console.Clear();
+				_console.Clear();
 			}
 		}
 	}

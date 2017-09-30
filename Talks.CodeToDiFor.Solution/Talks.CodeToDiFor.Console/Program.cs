@@ -52,7 +52,7 @@ namespace Talks.CodeToDiFor.ConsoleApp
 				ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
 				ISuperApplication senderApp = new SuperApplication(calc, sender);
 
-			IWriter writer = new ConsoleWriter();
+			IConsole writer = new ConsoleWriter();
 
 				return new SuperApplicationConsoleApp(senderApp, writer);
 			}

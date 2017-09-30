@@ -37,7 +37,7 @@ namespace Talks.C2DF.BetterApp.Lib
 			{
 				if (costRule.AppliesTo(msg))
 				{
-					Console.WriteLine($"Applying Rule: {costRule.RuleName}");
+					System.Console.WriteLine($"Applying Rule: {costRule.RuleName}");
 					msg.CurrentPrice = costRule.Apply(msg);
 				}
 			}
@@ -47,7 +47,7 @@ namespace Talks.C2DF.BetterApp.Lib
 			{
 				if (ExtRule.AppliesTo(msg))
 				{
-					Console.WriteLine($"Applying Rule: {ExtRule.RuleName}");
+					System.Console.WriteLine($"Applying Rule: {ExtRule.RuleName}");
 					msg.CurrentPrice = ExtRule.Apply(msg);
 				}
 			}
