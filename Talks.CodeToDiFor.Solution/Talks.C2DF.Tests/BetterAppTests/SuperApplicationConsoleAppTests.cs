@@ -57,7 +57,7 @@ namespace Talks.C2DF.Tests.BetterAppTests
 			sut.Run();
 
 			// Validate
-			consoleMock.Verify();
+			consoleMock.VerifyAll();
 			appMock.Verify();
 
 		}
