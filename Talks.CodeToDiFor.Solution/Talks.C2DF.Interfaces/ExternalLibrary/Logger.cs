@@ -5,8 +5,12 @@ namespace Talks.C2DF.Interfaces.ExternalLibrary
 {
 	public class Logger: ILogger
 	{
-		int logId = 0;
+		private int logId;
 
+		public Logger()
+		{
+			logId = 0;
+		}
 		// Used for Hard coded singleton
 		private static ILogger _instance = null;
 		public static ILogger Instance()

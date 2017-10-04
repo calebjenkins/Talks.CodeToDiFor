@@ -51,3 +51,6 @@ C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Cons
 C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.Lib.dll
 C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.Lib.pdb
 C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Talks.C2DF.BetterApp.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Polly.dll
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Polly.pdb
+C:\github\CJ\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.CodeToDiFor.Console\bin\Debug\Polly.xml

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Talks.C2DF.BetterApp.Lib.Logging;
 using Talks.C2DF.Interfaces;
@@ -11,10 +10,10 @@ namespace Talks.C2DF.BetterApp.Lib
 	{
 		readonly IList<IBasePriceRule> _basePriceRules;
 		readonly IList<IExtendedPriceRule> _extendedPriceRules;
-		readonly ILogger _logger;
+		readonly IAppLogger _logger;
 
 
-		public CostCalculator(IList<IBasePriceRule> basePriceRules, IList<IExtendedPriceRule> extendedPriceRules, ILogger logger)
+		public CostCalculator(IList<IBasePriceRule> basePriceRules, IList<IExtendedPriceRule> extendedPriceRules, IAppLogger logger)
 		{
 			_basePriceRules = basePriceRules;
 			_extendedPriceRules = extendedPriceRules;
@@ -37,7 +36,7 @@ namespace Talks.C2DF.BetterApp.Lib
 			{
 				if (costRule.AppliesTo(msg))
 				{
-					System.Console.WriteLine($"Applying Rule: {costRule.RuleName}");
+					_logger.Debug($"Applying Base Price Rule: {costRule.RuleName}");
 					msg.CurrentPrice = costRule.Apply(msg);
 				}
 			}
@@ -47,7 +46,7 @@ namespace Talks.C2DF.BetterApp.Lib
 			{
 				if (ExtRule.AppliesTo(msg))
 				{
-					System.Console.WriteLine($"Applying Rule: {ExtRule.RuleName}");
+					_logger.Debug($"Applying Extended Rule: {ExtRule.RuleName}");
 					msg.CurrentPrice = ExtRule.Apply(msg);
 				}
 			}

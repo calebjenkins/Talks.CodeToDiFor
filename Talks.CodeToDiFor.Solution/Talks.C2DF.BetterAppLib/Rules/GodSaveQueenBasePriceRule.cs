@@ -5,7 +5,7 @@ using Talks.C2DF.Interfaces.Models;
 
 namespace Talks.C2DF.BetterApp.Lib.Rules
 {
-	public class GodSaveQueenBasePriceRule: IBasePriceRule
+	public class GodSaveQueenExtendedPriceRule: IExtendedPriceRule
 	{
 		public string RuleName => "God Save the Queen";
 

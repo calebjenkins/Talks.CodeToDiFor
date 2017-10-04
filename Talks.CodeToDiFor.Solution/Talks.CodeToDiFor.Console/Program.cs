@@ -20,9 +20,9 @@ namespace Talks.CodeToDiFor.ConsoleApp
 
 		static void Main(string[] args)
 		{
-			TraditionalConsoleApp();
+			// TraditionalConsoleApp();
 			//CompositeRootConsoleApp();
-			//DIConsoleApp();
+			DIConsoleApp();
 		}
 
 		static void TraditionalConsoleApp()
@@ -43,8 +43,8 @@ namespace Talks.CodeToDiFor.ConsoleApp
 			{
 				IEncryptHelper crypto = new nope.Lib.Encryptor();
 				external.ILogger logger = new external.Logger(); // Not singleton
-				ILogger myLogger = new ExternalLogAdapter(logger);
-				ISender sender = new Sender(crypto, logger);
+				IAppLogger myLogger = new ExternalLogAdapter(logger);
+				ISender sender = new FedExSender(crypto, myLogger);
 
 				var basePriceRules = getBasePriceRules();
 				var extPriceRules = getExtendedPriceRules();
@@ -61,7 +61,6 @@ namespace Talks.CodeToDiFor.ConsoleApp
 			{
 				return new List<IBasePriceRule>()
 				{
-					new GodSaveQueenBasePriceRule(),
 					new LargerSizedBasePriceRule(),
 					new MediumSizedBasePriceRule(),
 					new SmallSizeBasePriceRule()
@@ -74,7 +73,8 @@ namespace Talks.CodeToDiFor.ConsoleApp
 				{
 					new ReallyUrgentMessageExtendedPriceRule(),
 					new SpecialDealExtendedPriceRule(),
-					new UrgentMessageExtendedPriceRule()
+					new UrgentMessageExtendedPriceRule(),
+					new GodSaveQueenExtendedPriceRule()
 				};
 			}
 

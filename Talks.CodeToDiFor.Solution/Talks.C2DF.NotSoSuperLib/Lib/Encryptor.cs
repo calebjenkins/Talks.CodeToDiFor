@@ -15,8 +15,12 @@ namespace Talks.C2DF.NotSoSuperLib.Lib
 
 		public string Encrypt(string message)
 		{
-			Console.WriteLine("Encrypting Message");
-			return $"xXX_{message}_XXx";
+			Console.Write($"Encrypting Message: {message} : ");
+
+			var encMsg = $"xXX_{message}_XXx";
+			Console.WriteLine ($" Encrypted: {encMsg}");
+
+			return encMsg;
 		}
 	}
 }

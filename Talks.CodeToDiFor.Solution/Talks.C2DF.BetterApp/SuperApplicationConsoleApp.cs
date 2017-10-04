@@ -31,7 +31,7 @@ namespace Talks.C2DF.BetterApp
 
 				_console.WriteLine();
 				_console.WriteLine("Output:");
-				_console.ForegroundColor = ConsoleColor.Blue;
+				_console.ForegroundColor = ConsoleColor.Cyan;
 
 				var result = _senderApp.Send(msg);
 

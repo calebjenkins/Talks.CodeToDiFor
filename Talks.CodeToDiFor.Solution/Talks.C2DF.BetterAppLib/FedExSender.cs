@@ -1,15 +1,15 @@
 ﻿using System;
+using Talks.C2DF.BetterApp.Lib.Logging;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.ExternalLibrary;
 
 namespace Talks.C2DF.BetterApp.Lib
 {
-	public class Sender: ISender
+	public class FedExSender: ISender
 	{
 		IEncryptHelper _crypto;
-		ILogger _logger;
+		IAppLogger _logger;
 
-		public Sender(IEncryptHelper crypto, ILogger logger)
+		public FedExSender(IEncryptHelper crypto, IAppLogger logger)
 		{
 			_crypto = crypto;
 			_logger = logger;
@@ -18,7 +18,7 @@ namespace Talks.C2DF.BetterApp.Lib
 		public void Send(string message)
 		{
 			var xMsg = _crypto.Encrypt(message);
-			_logger.Info($"Message Sent: {xMsg}"); // Extension Methods from External Library
+			_logger.Info($"Message Sent via FedEx: {xMsg}");
 		}
 	}
 }
