@@ -57,7 +57,7 @@
     <Compile Include="Logging\IAppLogger.cs" />
     <Compile Include="Logging\LoggerExtensions.cs" />
     <Compile Include="v2Features\RetrySender.cs" />
-    <Compile Include="Rules\GodSaveQueenBasePriceRule.cs" />
+    <Compile Include="Rules\GodSaveQueenExtendedPriceRule.cs" />
     <Compile Include="Rules\LargerSizedBasePriceRule.cs" />
     <Compile Include="Rules\MediumSizedBasePriceRule.cs" />
     <Compile Include="Rules\ReallyUrgentMessageExtendedPriceRule.cs" />

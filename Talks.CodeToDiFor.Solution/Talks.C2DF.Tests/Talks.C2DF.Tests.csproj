@@ -54,7 +54,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BetterApp.LibTests\Rules\GodSaveTheQueenTest.cs" />
     <Compile Include="BetterApp.LibTests\When_CostCalculator_Calculates_It_.cs" />
+    <Compile Include="BetterApp.LibTests\When_FedExSender_Send_.cs" />
     <Compile Include="BetterApp.LibTests\When_Logging_with_ExternalLogAdapter_.cs" />
     <Compile Include="BetterAppTests\When_Send_with_SendingMicroApp_.cs" />
     <Compile Include="BetterAppTests\When_SuperApplicationConsoleApp_Is_Run_.cs" />
