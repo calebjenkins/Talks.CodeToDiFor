@@ -4,7 +4,7 @@ using Talks.C2DF.Interfaces;
 
 namespace Talks.C2DF.BetterApp.Lib.v2Features
 {
-	public class UpsSender: ISender
+	public class UpsSender: IMessageSender
 	{
 		IEncryptHelper _crypto;
 		IAppLogger _logger;

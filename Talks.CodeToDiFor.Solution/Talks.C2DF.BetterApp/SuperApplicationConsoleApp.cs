@@ -8,10 +8,10 @@ namespace Talks.C2DF.BetterApp
 	public class SuperApplicationConsoleApp
 	{
 
-		readonly ISuperApplication _senderApp;
+		readonly ISendingMicroApp _senderApp;
 		readonly IConsole _console;
 
-		public SuperApplicationConsoleApp(ISuperApplication senderApp, IConsole consoleWriter)
+		public SuperApplicationConsoleApp(ISendingMicroApp senderApp, IConsole consoleWriter)
 		{
 			_senderApp = senderApp ?? throw new ArgumentNullException(nameof(senderApp), $"{nameof(senderApp)} is null.");
 			_console = consoleWriter ?? throw new ArgumentNullException(nameof(consoleWriter), $"{nameof(consoleWriter)} is null.");

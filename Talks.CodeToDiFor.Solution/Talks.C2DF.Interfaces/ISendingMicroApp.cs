@@ -7,7 +7,7 @@ using Talks.C2DF.Interfaces.Models;
 
 namespace Talks.C2DF.Interfaces
 {
-	public interface ISuperApplication
+	public interface ISendingMicroApp
 	{
 		SendResponse Send(string message);
 	}

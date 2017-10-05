@@ -31,7 +31,7 @@ namespace Talks.C2DF.BetterApp
 			For<IAppLogger>().Use<ExternalLogAdapter>().AlwaysUnique(); // not yet singleton
 
 
-			For<ISender>().Use<FedExSender>();
+			For<IMessageSender>().Use<FedExSender>();
 
 
 			//TODO: Set up Retry.. then change out Sender Imp - maybe to UPS? 

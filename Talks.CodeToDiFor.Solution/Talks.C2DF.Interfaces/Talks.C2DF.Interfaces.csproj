@@ -49,8 +49,8 @@
     <Compile Include="ICostCalculator.cs" />
     <Compile Include="ICostRule.cs" />
     <Compile Include="IEncryptHelper.cs" />
-    <Compile Include="ISender.cs" />
-    <Compile Include="ISuperApplication.cs" />
+    <Compile Include="IMessageSender.cs" />
+    <Compile Include="ISendingMicroApp.cs" />
     <Compile Include="Models\MessageForProcessing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\SendResponse.cs" />

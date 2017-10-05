@@ -4,7 +4,7 @@ using Talks.C2DF.Interfaces;
 
 namespace Talks.C2DF.BetterApp.Lib
 {
-	public class FedExSender: ISender
+	public class FedExSender: IMessageSender
 	{
 		IEncryptHelper _crypto;
 		IAppLogger _logger;

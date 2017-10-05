@@ -5,12 +5,12 @@ using Talks.C2DF.Interfaces;
 
 namespace Talks.C2DF.BetterApp.Lib.v2Features
 {
-	public class RetrySender: ISender
+	public class RetrySender: IMessageSender
 	{
 		IAppLogger _logger;
-		ISender _sender;
+		IMessageSender _sender;
 
-		public RetrySender(IAppLogger logger, ISender sender)
+		public RetrySender(IAppLogger logger, IMessageSender sender)
 		{
 			_logger = logger;
 			_sender = sender;

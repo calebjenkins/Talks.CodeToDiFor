@@ -9,7 +9,7 @@ using Talks.C2DF.NotSoSuperLib.Lib;
 
 namespace Talks.C2DF.NotSoSuperLib
 {
-	public class NotSoGreatApp : ISuperApplication
+	public class NotSoGreatSendingMicroApp : ISendingMicroApp
 	{
 		public SendResponse Send(string message)
 		{

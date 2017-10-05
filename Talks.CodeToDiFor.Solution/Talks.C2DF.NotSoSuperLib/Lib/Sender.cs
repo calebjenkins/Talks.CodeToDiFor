@@ -5,7 +5,7 @@ using Talks.C2DF.Interfaces.ExternalLibrary;
 
 namespace Talks.C2DF.NotSoSuperLib.Lib
 {
-	public class Sender: ISender
+	public class Sender: IMessageSender
 	{
 		ILogger logger;
 		public Sender()

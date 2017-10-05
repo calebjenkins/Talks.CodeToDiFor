@@ -20,9 +20,9 @@ namespace Talks.CodeToDiFor.ConsoleApp
 
 		static void Main(string[] args)
 		{
-			// TraditionalConsoleApp();
+			TraditionalConsoleApp();
 			//CompositeRootConsoleApp();
-			DIConsoleApp();
+			//DIConsoleApp();
 		}
 
 		static void TraditionalConsoleApp()
@@ -44,13 +44,13 @@ namespace Talks.CodeToDiFor.ConsoleApp
 				IEncryptHelper crypto = new nope.Lib.Encryptor();
 				external.ILogger logger = new external.Logger(); // Not singleton
 				IAppLogger myLogger = new ExternalLogAdapter(logger);
-				ISender sender = new FedExSender(crypto, myLogger);
+				IMessageSender sender = new FedExSender(crypto, myLogger);
 
 				var basePriceRules = getBasePriceRules();
 				var extPriceRules = getExtendedPriceRules();
 
 				ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
-				ISuperApplication senderApp = new SuperApplication(calc, sender);
+				ISendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
 
 			IConsole writer = new ConsoleWriter();
 

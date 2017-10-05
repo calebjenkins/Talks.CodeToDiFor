@@ -21,7 +21,7 @@ namespace Talks.C2DF.NotSoSuperLib
 				Console.WriteLine("Output:");
 				Console.ForegroundColor = ConsoleColor.Blue;
 
-				var senderApp = new NotSoGreatApp();
+				var senderApp = new NotSoGreatSendingMicroApp();
 				var result = senderApp.Send(msg);
 
 				Console.ForegroundColor = startColor;
