@@ -15,7 +15,7 @@ namespace Talks.C2DF.Interfaces.ExternalLibrary
 
 		public static void Debug(this ILogger logger, string message)
 		{
-			if (logger.Enabled(LogType.Warn))
+			if (logger.Enabled(LogType.Debug))
 			{
 				logger.Log(new LogEntry() { Message = message, LogType = LogType.Debug });
 			}
@@ -23,7 +23,7 @@ namespace Talks.C2DF.Interfaces.ExternalLibrary
 
 		public static void Info(this ILogger logger, string message)
 		{
-			if (logger.Enabled(LogType.Warn))
+			if (logger.Enabled(LogType.Info))
 			{
 				logger.Log(new LogEntry() { Message = message, LogType = LogType.Info });
 			}

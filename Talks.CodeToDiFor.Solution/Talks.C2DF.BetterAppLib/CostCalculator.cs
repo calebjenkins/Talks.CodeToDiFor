@@ -55,7 +55,7 @@ namespace Talks.C2DF.BetterApp.Lib
 		}
 
 		// Not in Interface - but still unit testable for this implementation
-		public int CalculateWeight(string message)
+		public static int CalculateWeight(string message)
 		{
 			return message.Length;
 		}
