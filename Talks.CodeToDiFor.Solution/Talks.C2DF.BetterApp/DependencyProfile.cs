@@ -4,6 +4,7 @@ using Talks.C2DF.Interfaces;
 using Talks.C2DF.BetterApp.Lib;
 using Talks.C2DF.BetterApp.Lib.Console;
 using Talks.C2DF.BetterApp.Lib.Logging;
+using Talks.C2DF.BetterApp.Lib.v2Features;
 
 namespace Talks.C2DF.BetterApp
 {
@@ -25,10 +26,9 @@ namespace Talks.C2DF.BetterApp
 			For<IEncryptHelper>().Use<Encryptor>();
 			For<IConsole>().Use<ConsoleWriter>();
 
-
 			// For<Ext.ILogger>().Use(Ext.Logger.Instance()); // DI with existing instance
-			For<Ext.ILogger>().Use<Ext.Logger>().AlwaysUnique();
-			For<IAppLogger>().Use<ExternalLogAdapter>().AlwaysUnique(); // not yet singleton
+			//For<Ext.ILogger>().Use<Ext.Logger>().AlwaysUnique();
+			//For<IAppLogger>().Use<ExternalLogAdapter>().AlwaysUnique(); // not yet singleton
 
 
 			For<IMessageSender>().Use<FedExSender>();
@@ -38,6 +38,9 @@ namespace Talks.C2DF.BetterApp
 			//For<ISender>().Use<RetrySender>()
 			//	.Ctor<ISender>("sender").Is<FedExSender>()
 			//	.Singleton();
+
+			For<IWriter>().Use<DebugWriter>().Singleton();
+			For<IAppLogger>().Use<MyLogger>().Singleton();
 
 		}
 	}
