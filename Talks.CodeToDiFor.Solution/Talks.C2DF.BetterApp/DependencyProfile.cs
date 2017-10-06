@@ -25,6 +25,7 @@ namespace Talks.C2DF.BetterApp
 			// For<IEncryptHelper>().Use<NotSoSuperLib.Lib.Encryptor>();
 			For<IEncryptHelper>().Use<Encryptor>();
 			For<IConsole>().Use<ConsoleWriter>();
+			For<ISendingMicroApp>().Use<SuperSendingMicroApp>();
 
 			// For<Ext.ILogger>().Use(Ext.Logger.Instance()); // DI with existing instance
 			//For<Ext.ILogger>().Use<Ext.Logger>().AlwaysUnique();

@@ -25,11 +25,11 @@ namespace Talks.C2DF.Web.DependencyResolution
 		public static IContainer Initialize()
 		{
 			return new Container(
-				c => {
+				c =>
+				{
 					c.AddRegistry<DefaultRegistry>();
 					c.AddRegistry<BetterApp.DependencyProfile>();
 				}
-			
 			);
 		}
 	}

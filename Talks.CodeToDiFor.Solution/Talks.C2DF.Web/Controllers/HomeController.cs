@@ -9,9 +9,13 @@ namespace Talks.C2DF.Web.Controllers
 {
 	public class HomeController: Controller
 	{
+		//ICostCalculator calculator;
+		//public HomeController(ICostCalculator calculator)
+		//{
+		//	this.calculator = calculator;
+		//}
 
-		readonly ISendingMicroApp sendingApp;
-
+		ISendingMicroApp sendingApp;
 		public HomeController(ISendingMicroApp sendingApp)
 		{
 			this.sendingApp = sendingApp;
@@ -19,6 +23,9 @@ namespace Talks.C2DF.Web.Controllers
 
 		public ActionResult Index()
 		{
+
+			var result = sendingApp.Send("Hello World!!!DEAL");
+
 			return View();
 		}
 
