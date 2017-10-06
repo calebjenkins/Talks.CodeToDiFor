@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Talks.C2DF.Interfaces.Models.SendResponse
+
+@{
 	ViewBag.Title = "Message Sender";
 }
 
@@ -11,9 +13,24 @@
 	<div class="col-md-4">
 		<h2>Send</h2>
 		<p>
-		<form action="/send" method="post">
-		<input type="text" width="200" name="Text" />&nbsp;<input type="submit" title="Send" value="Send It!" />
-		</form>
+			<form action="/Home/send" method="post">
+				<input type="text" name="Text" class="input-lg" />&nbsp;<input type="submit" title="Send" value="Send It!" class="btn-lg" />
+			</form>
 		</p>
+
+		@{ if (Model.Price >= 0)
+			{
+			<h3 class="alert-success">@ViewBag.Message</h3>
+			<div>
+				<h4>There are results
+				<ul class="list-group-item-heading">
+					<li>Result: @Model.ResultMessage</li>
+					<li>Price: @Model.Price</li>
+					<li>Message: @Model.Message</li>
+				</ul>
+				</h4>
+			</div>
+			}
+		}
 	</div>
 </div>

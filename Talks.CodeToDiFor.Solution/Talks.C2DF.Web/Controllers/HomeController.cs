@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Talks.C2DF.BetterApp.Lib.Logging;
 using Talks.C2DF.Interfaces;
+using Talks.C2DF.Interfaces.Models;
 
 namespace Talks.C2DF.Web.Controllers
 {
@@ -22,12 +23,8 @@ namespace Talks.C2DF.Web.Controllers
 
 		public ActionResult Index()
 		{
-			_logger.Debug("Sending Message from MVC App");
-			var result = sendingApp.Send("Hello World!!!DEAL");
-
-			_logger.Debug($"Result: {result.ResultMessage} -- Price: {result.Price} -- Message: {result.Message} ");
-
-			return View();
+			var msg = new SendResponse() { Price = -1 };
+			return View(msg);
 		}
 
 		public ActionResult About()
@@ -42,6 +39,20 @@ namespace Talks.C2DF.Web.Controllers
 			ViewBag.Message = "Your contact page.";
 
 			return View();
+		}
+
+		[HttpPost]
+		public ActionResult Send(string Text)
+		{
+
+			_logger.Debug("Sending Message from MVC App");
+			var result = sendingApp.Send(Text);
+
+			_logger.Debug($"Result: {result.ResultMessage} -- Price: {result.Price} -- Message: {result.Message} ");
+
+			ViewBag.Message = $"Message Sent!";
+
+			return View("index", result);
 		}
 	}
 }
