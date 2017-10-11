@@ -1,7 +1,0 @@
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\bin\Debug\Talks.BetterSpyLib.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\bin\Debug\Talks.BetterSpyLib.pdb
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\bin\Debug\Talks.SuperSpyLib.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\bin\Debug\Talks.SuperSpyLib.pdb
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\obj\Debug\Talks.BetterSpyLib.csprojResolveAssemblyReference.cache
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\obj\Debug\Talks.BetterSpyLib.dll
-C:\Users\cjenk\Source\Repos\C2D4\Talks.CodeToDiFor\Talks.CodeToDiFor.Solution\Talks.BetterSpyLib\obj\Debug\Talks.BetterSpyLib.pdb
