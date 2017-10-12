@@ -36,5 +36,12 @@ namespace Talks.C2DF.Tests.BetterAppLibTests.Rules
 		{
 			Assert.IsFalse(rule.AppliesTo(invalidMsg));
 		}
+
+		[TestMethod]
+		public void Should_return_proper_name()
+		{
+			var name = "God Save the Queen";
+			Assert.AreEqual(name, rule.RuleName);
+		}
 	}
 }
