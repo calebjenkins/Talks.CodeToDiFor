@@ -31,7 +31,7 @@ namespace Talks.C2DF.Interfaces.ExternalLibrary
 
 		public static void Error(this ILogger logger, string message)
 		{
-			if (logger.Enabled(LogType.Warn))
+			if (logger.Enabled(LogType.Error))
 			{
 				logger.Log(new LogEntry() { Message = message, LogType = LogType.Error });
 			}
