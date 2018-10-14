@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.Models;
+using Talks.C2DF.Models;
 using Talks.C2DF.NotSoSuperLib.Lib;
 
 namespace Talks.C2DF.NotSoSuperLib

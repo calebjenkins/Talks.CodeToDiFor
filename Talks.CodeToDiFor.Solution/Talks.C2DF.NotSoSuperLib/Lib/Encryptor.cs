@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Linq;
 using Talks.C2DF.Interfaces;
 
 namespace Talks.C2DF.NotSoSuperLib.Lib
 {
-	public class Encryptor: IEncryptHelper
+	public class Encryptor : IEncryptHelper
 	{
 		public string Decrypt(string message)
 		{
@@ -18,7 +17,7 @@ namespace Talks.C2DF.NotSoSuperLib.Lib
 			Console.Write($"Encrypting Message: {message} : ");
 
 			var encMsg = $"xXX_{message}_XXx";
-			Console.WriteLine ($" Encrypted: {encMsg}");
+			Console.WriteLine($" Encrypted: {encMsg}");
 
 			return encMsg;
 		}

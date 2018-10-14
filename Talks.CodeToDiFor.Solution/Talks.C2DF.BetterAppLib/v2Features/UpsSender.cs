@@ -1,10 +1,11 @@
 ﻿using System;
-using Talks.C2DF.BetterApp.Lib.Logging;
+using System.Linq;
+using Talks.C2DF.BetterAppLib.Logging;
 using Talks.C2DF.Interfaces;
 
-namespace Talks.C2DF.BetterApp.Lib.v2Features
+namespace Talks.C2DF.BetterAppLib.v2Features
 {
-	public class UpsSender: IMessageSender
+	public class UpsSender : IMessageSender
 	{
 		IEncryptHelper _crypto;
 		IAppLogger _logger;

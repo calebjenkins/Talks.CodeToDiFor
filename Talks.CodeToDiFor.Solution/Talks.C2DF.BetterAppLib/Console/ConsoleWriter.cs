@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
 
-namespace Talks.C2DF.BetterApp.Lib.Console
+namespace Talks.C2DF.BetterAppLib.Console
 {
-	public class ConsoleWriter: IConsole 
+	public class ConsoleWriter : IConsole
 	{
 		public ConsoleColor ForegroundColor { get => System.Console.ForegroundColor; set => System.Console.ForegroundColor = value; }
 

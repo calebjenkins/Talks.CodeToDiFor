@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Talks.C2DF.BetterApp.Lib.Logging
+namespace Talks.C2DF.BetterAppLib.Logging
 {
 	public static class LoggerExtensions
 	{

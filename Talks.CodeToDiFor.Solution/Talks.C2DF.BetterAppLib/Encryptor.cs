@@ -1,10 +1,11 @@
 ﻿using System;
-using Talks.C2DF.BetterApp.Lib.Logging;
+using System.Linq;
+using Talks.C2DF.BetterAppLib.Logging;
 using Talks.C2DF.Interfaces;
 
-namespace Talks.C2DF.BetterApp.Lib
+namespace Talks.C2DF.BetterAppLib
 {
-	public class Encryptor: IEncryptHelper
+	public class Encryptor : IEncryptHelper
 	{
 		readonly IAppLogger _logger;
 

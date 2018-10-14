@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Talks.C2DF.BetterApp.Lib.Logging
+namespace Talks.C2DF.BetterAppLib.Logging
 {
 	public interface IAppLogger // used to wrap Extension Methods from external Library
 	{

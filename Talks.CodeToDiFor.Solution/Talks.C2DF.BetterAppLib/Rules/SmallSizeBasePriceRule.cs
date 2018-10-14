@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.Models;
+using Talks.C2DF.Models;
 
-namespace Talks.C2DF.BetterApp.Lib.Rules
+namespace Talks.C2DF.BetterAppLib.Rules
 {
 	public class SmallSizeBasePriceRule : IBasePriceRule
 	{

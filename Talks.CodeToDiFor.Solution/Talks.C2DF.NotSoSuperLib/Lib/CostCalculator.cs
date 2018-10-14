@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.Text;
+using Talks.C2DF.ExternalLoggingLib;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.ExternalLibrary;
 
 namespace Talks.C2DF.NotSoSuperLib.Lib
 {
-	public class CostCalculator: ICostCalculator
+	public class CostCalculator : ICostCalculator
 	{
 		ILogger _logger;
 		public CostCalculator()

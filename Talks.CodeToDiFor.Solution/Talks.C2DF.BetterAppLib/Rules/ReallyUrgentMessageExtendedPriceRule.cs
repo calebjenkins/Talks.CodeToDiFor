@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.Models;
+using Talks.C2DF.Models;
 
-namespace Talks.C2DF.BetterApp.Lib.Rules
+namespace Talks.C2DF.BetterAppLib.Rules
 {
-	public class ReallyUrgentMessageExtendedPriceRule: IExtendedPriceRule
+	public class ReallyUrgentMessageExtendedPriceRule : IExtendedPriceRule
 	{
 		public string RuleName => "Really Urgent Cost Rule";
 

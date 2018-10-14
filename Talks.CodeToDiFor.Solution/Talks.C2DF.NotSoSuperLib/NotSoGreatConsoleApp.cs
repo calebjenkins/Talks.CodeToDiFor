@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Linq;
+using Talks.C2DF.Models;
+using Talks.C2DF.NotSoSuperLib.Lib;
 
 namespace Talks.C2DF.NotSoSuperLib
 {

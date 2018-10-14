@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
+using Talks.C2DF.ExternalLoggingLib;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.ExternalLibrary;
 
 namespace Talks.C2DF.NotSoSuperLib.Lib
 {
-	public class Sender: IMessageSender
+	public class Sender : IMessageSender
 	{
 		ILogger logger;
 		public Sender()

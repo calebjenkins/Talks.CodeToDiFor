@@ -1,11 +1,12 @@
-﻿using System;
-using Polly;
-using Talks.C2DF.BetterApp.Lib.Logging;
+﻿using Polly;
+using System;
+using System.Linq;
+using Talks.C2DF.BetterAppLib.Logging;
 using Talks.C2DF.Interfaces;
 
-namespace Talks.C2DF.BetterApp.Lib.v2Features
+namespace Talks.C2DF.BetterAppLib.v2Features
 {
-	public class RetrySender: IMessageSender
+	public class RetrySender : IMessageSender
 	{
 		IAppLogger _logger;
 		IMessageSender _sender;

@@ -1,8 +1,10 @@
-﻿using Talks.C2DF.BetterApp.Lib.Console;
-using Talks.C2DF.BetterApp.Lib.Logging;
-using Talks.C2DF.Interfaces.ExternalLibrary;
+﻿using System;
+using System.Linq;
+using Talks.C2DF.BetterAppLib.Console;
+using Talks.C2DF.BetterAppLib.Logging;
+using Talks.C2DF.ExternalLoggingLib;
 
-namespace Talks.C2DF.BetterApp.Lib.v2Features
+namespace Talks.C2DF.BetterAppLib.v2Features
 {
 	public class MyLogger : IAppLogger
 	{

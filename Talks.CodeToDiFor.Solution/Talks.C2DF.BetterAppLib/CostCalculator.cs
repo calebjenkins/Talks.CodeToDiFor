@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Talks.C2DF.BetterApp.Lib.Logging;
+using Talks.C2DF.BetterAppLib.Logging;
+using Talks.C2DF.ExternalLoggingLib;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Interfaces.Models;
+using Talks.C2DF.Models;
 
-namespace Talks.C2DF.BetterApp.Lib
+namespace Talks.C2DF.BetterAppLib
 {
-	public class CostCalculator: ICostCalculator
+	public class CostCalculator : ICostCalculator
 	{
 		readonly IList<IBasePriceRule> _basePriceRules;
 		readonly IList<IExtendedPriceRule> _extendedPriceRules;
