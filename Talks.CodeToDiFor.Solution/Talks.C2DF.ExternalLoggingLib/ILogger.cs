@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Talks.C2DF.ExternalLoggingLib
 {
@@ -6,5 +7,6 @@ namespace Talks.C2DF.ExternalLoggingLib
 	{
 		void Log(LogEntry logEntry);
 		bool Enabled(LogType type);
+		IList<LogEntry> GetEntries();
 	}
 }

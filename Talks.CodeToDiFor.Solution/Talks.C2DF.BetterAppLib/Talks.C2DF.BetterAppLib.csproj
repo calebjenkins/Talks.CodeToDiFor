@@ -9,8 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj" />
     <ProjectReference Include="..\Talks.C2DF.ExternalLoggingLib\Talks.C2DF.ExternalLoggingLib.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.Models\Talks.C2DF.Models.csproj" />
   </ItemGroup>
 
 </Project>

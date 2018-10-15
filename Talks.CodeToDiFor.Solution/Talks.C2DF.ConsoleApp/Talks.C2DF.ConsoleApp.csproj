@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Talks.C2DF.NotSoSuperLib\Talks.C2DF.NotSoSuperLib.csproj" />
+  </ItemGroup>
+
 </Project>

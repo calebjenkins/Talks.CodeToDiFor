@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Talks.CodeToDiFor.Solution\Talks.C2DF.Models\Talks.C2DF.Models.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.Models\Talks.C2DF.Models.csproj" />
   </ItemGroup>
 
 </Project>

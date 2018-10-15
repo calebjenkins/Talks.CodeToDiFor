@@ -1,4 +1,5 @@
 ﻿using System;
+using nope = Talks.C2DF.NotSoSuperLib;
 
 namespace Talks.C2DF.ConsoleApp
 {
@@ -10,16 +11,16 @@ namespace Talks.C2DF.ConsoleApp
 
 		static void Main(string[] args)
 		{
-			//TraditionalConsoleApp();
+			TraditionalConsoleApp();
 			//CompositeRootConsoleApp();
 			//DIConsoleApp();
 		}
 
-		//static void TraditionalConsoleApp()
-		//{
-		//	var app = new nope.NotSoGreatConsoleApp();
-		//	app.Run();
-		//}
+		static void TraditionalConsoleApp()
+		{
+			var app = new nope.NotSoGreatConsoleApp();
+			app.Run();
+		}
 
 		//static void CompositeRootConsoleApp()
 		//{
