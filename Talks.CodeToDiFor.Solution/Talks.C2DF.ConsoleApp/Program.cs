@@ -1,5 +1,13 @@
 ﻿using System;
+using Talks.C2DF.BetterApp;
+using Talks.C2DF.Interfaces;
 using nope = Talks.C2DF.NotSoSuperLib;
+using external = Talks.C2DF.ExternalLoggingLib;
+using Talks.C2DF.BetterAppLib.Logging;
+using Talks.C2DF.BetterAppLib;
+using Talks.C2DF.BetterAppLib.Console;
+using System.Collections.Generic;
+using Talks.C2DF.BetterAppLib.Rules;
 
 namespace Talks.C2DF.ConsoleApp
 {
@@ -22,60 +30,61 @@ namespace Talks.C2DF.ConsoleApp
 			app.Run();
 		}
 
-		//static void CompositeRootConsoleApp()
-		//{
-		//	var app = AppComposite();
-		//	app.Run();
-		//}
+		static void CompositeRootConsoleApp()
+		{
+			var app = AppComposite();
+			app.Run();
+		}
 
-		//#region CompositonRoot
+		#region CompositonRoot
 
-		//static SuperApplicationConsoleApp AppComposite()
-		//{
-		//	IEncryptHelper crypto = new nope.Lib.Encryptor();
-		//	external.ILogger logger = new external.Logger(); // Not singleton
-		//	IAppLogger myLogger = new ExternalLogAdapter(logger);
-		//	IMessageSender sender = new FedExSender(crypto, myLogger);
+		static SuperApplicationConsoleApp AppComposite()
+		{
+			IEncryptHelper crypto = new nope.Lib.Encryptor();
+			external.ILogger logger = new external.Logger(); // Not singleton
 
-		//	var basePriceRules = getBasePriceRules();
-		//	var extPriceRules = getExtendedPriceRules();
+			IAppLogger myLogger = new ExternalLogAdapter(logger);
+			IMessageSender sender = new FedExSender(crypto, myLogger);
 
-		//	ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
-		//	ISendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
+			var basePriceRules = getBasePriceRules();
+			var extPriceRules = getExtendedPriceRules();
 
-		//	IConsole writer = new ConsoleWriter();
+			ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
+			ISendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
 
-		//	return new SuperApplicationConsoleApp(senderApp, writer);
-		//}
+			IConsole writer = new ConsoleWriter();
 
-		//static IList<IBasePriceRule> getBasePriceRules()
-		//{
-		//	return new List<IBasePriceRule>()
-		//		{
-		//			new LargerSizedBasePriceRule(),
-		//			new MediumSizedBasePriceRule(),
-		//			new SmallSizeBasePriceRule()
-		//		};
-		//}
+			return new SuperApplicationConsoleApp(senderApp, writer);
+		}
 
-		//static IList<IExtendedPriceRule> getExtendedPriceRules()
-		//{
-		//	return new List<IExtendedPriceRule>()
-		//		{
-		//			new ReallyUrgentMessageExtendedPriceRule(),
-		//			new SpecialDealExtendedPriceRule(),
-		//			new UrgentMessageExtendedPriceRule(),
-		//			new GodSaveQueenExtendedPriceRule()
-		//		};
-		//}
+		static IList<IBasePriceRule> getBasePriceRules()
+		{
+			return new List<IBasePriceRule>()
+				{
+					new LargerSizedBasePriceRule(),
+					new MediumSizedBasePriceRule(),
+					new SmallSizeBasePriceRule()
+				};
+		}
 
-		//#endregion
+		static IList<IExtendedPriceRule> getExtendedPriceRules()
+		{
+			return new List<IExtendedPriceRule>()
+				{
+					new ReallyUrgentMessageExtendedPriceRule(),
+					new SpecialDealExtendedPriceRule(),
+					new UrgentMessageExtendedPriceRule(),
+					new GodSaveQueenExtendedPriceRule()
+				};
+		}
 
-		//static void DIConsoleApp()
-		//{
-		//	//IContainer container = new Container(new DependencyProfile());
-		//	//var app = container.GetInstance<SuperApplicationConsoleApp>();
-		//	//app.Run();
-		//}
+		#endregion
+
+		static void DIConsoleApp()
+		{
+			//IContainer container = new Container(new DependencyProfile());
+			//var app = container.GetInstance<SuperApplicationConsoleApp>();
+			//app.Run();
+		}
 	}
 }

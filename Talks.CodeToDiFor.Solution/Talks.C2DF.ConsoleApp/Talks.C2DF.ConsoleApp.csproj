@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Talks.C2DF.BetterApp\Talks.C2DF.BetterApp.csproj" />
     <ProjectReference Include="..\Talks.C2DF.NotSoSuperLib\Talks.C2DF.NotSoSuperLib.csproj" />
   </ItemGroup>
 
