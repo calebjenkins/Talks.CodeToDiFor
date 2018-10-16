@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Lamar" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Talks.C2DF.BetterAppLib\Talks.C2DF.BetterAppLib.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.NotSoSuperLib\Talks.C2DF.NotSoSuperLib.csproj" />
   </ItemGroup>
 
 </Project>

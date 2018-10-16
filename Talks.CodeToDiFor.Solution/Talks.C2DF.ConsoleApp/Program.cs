@@ -8,6 +8,7 @@ using Talks.C2DF.BetterAppLib;
 using Talks.C2DF.BetterAppLib.Console;
 using System.Collections.Generic;
 using Talks.C2DF.BetterAppLib.Rules;
+using Lamar;
 
 namespace Talks.C2DF.ConsoleApp
 {
@@ -19,9 +20,9 @@ namespace Talks.C2DF.ConsoleApp
 
 		static void Main(string[] args)
 		{
-			TraditionalConsoleApp();
-			//CompositeRootConsoleApp();
-			//DIConsoleApp();
+			// TraditionalConsoleApp();
+			// CompositeRootConsoleApp();
+			DIConsoleApp();
 		}
 
 		static void TraditionalConsoleApp()
@@ -50,7 +51,7 @@ namespace Talks.C2DF.ConsoleApp
 			var extPriceRules = getExtendedPriceRules();
 
 			ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
-			ISendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
+			IMessageSendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
 
 			IConsole writer = new ConsoleWriter();
 
@@ -82,9 +83,9 @@ namespace Talks.C2DF.ConsoleApp
 
 		static void DIConsoleApp()
 		{
-			//IContainer container = new Container(new DependencyProfile());
-			//var app = container.GetInstance<SuperApplicationConsoleApp>();
-			//app.Run();
+			IContainer container = new Container(DependencyProfileLamar.GetDIConfig());
+			var app = container.GetInstance<SuperApplicationConsoleApp>();
+			app.Run();
 		}
 	}
 }

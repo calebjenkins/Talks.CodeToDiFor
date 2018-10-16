@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.BetterAppLib", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Interfaces", "Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj", "{8F77AB5B-CFB3-483D-BC61-B0352C7F58EE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{484EBA83-4A19-482F-99DC-6E54875C6251}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4CA43AF-5E42-4F35-93CC-F8D26BC3FB7F} = {484EBA83-4A19-482F-99DC-6E54875C6251}
+		{95AC0B01-5D1B-40E0-AC5C-882A7A17715B} = {484EBA83-4A19-482F-99DC-6E54875C6251}
+		{24C392F1-260E-4CD6-880A-7F7B4D1E7777} = {484EBA83-4A19-482F-99DC-6E54875C6251}
+		{8F77AB5B-CFB3-483D-BC61-B0352C7F58EE} = {484EBA83-4A19-482F-99DC-6E54875C6251}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B55F4FE-9E00-417D-8693-C692658DCFEF}
