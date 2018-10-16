@@ -7,6 +7,7 @@ using Talks.C2DF.Interfaces;
 using nope = Talks.C2DF.NotSoSuperLib;
 using external = Talks.C2DF.ExternalLoggingLib;
 using Talks.C2DF.BetterAppLib.v2Features;
+using Talks.C2DF.BetterAppLib.Rules;
 
 namespace Talks.C2DF.BetterApp
 {
@@ -20,7 +21,9 @@ namespace Talks.C2DF.BetterApp
 			registry.Scan( scan =>
 			{
 				scan.WithDefaultConventions();
-				scan.AssembliesFromApplicationBaseDirectory();
+				//scan.AssembliesFromApplicationBaseDirectory();
+				scan.AssemblyContainingType<IBasePriceRule>();
+				scan.AssemblyContainingType<GodSaveQueenExtendedPriceRule>();
 
 				scan.AddAllTypesOf<IBasePriceRule>();
 				scan.AddAllTypesOf<IExtendedPriceRule>();
