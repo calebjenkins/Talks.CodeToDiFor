@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lamar;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Talks.C2DF.BetterApp;
 
 namespace Talks.C2DF.WebCORE
 {
@@ -22,7 +24,9 @@ namespace Talks.C2DF.WebCORE
 		public IConfiguration Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
-		public void ConfigureServices(IServiceCollection services)
+		// Take in Lamar's ServiceRegistry instead of IServiceCollection
+		// as your argument, but **fear not**, it implements IServiceCollection as well
+		public void ConfigureServices(ServiceRegistry services)
 		{
 			services.Configure<CookiePolicyOptions>(options =>
 			{
@@ -33,6 +37,9 @@ namespace Talks.C2DF.WebCORE
 
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+			// services.AddLogging();
+			services.IncludeRegistry<DependencyProfileLamar>();
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

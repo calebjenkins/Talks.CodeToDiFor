@@ -83,7 +83,7 @@ namespace Talks.C2DF.ConsoleApp
 
 		static void DIConsoleApp()
 		{
-			IContainer container = new Container(DependencyProfileLamar.GetDIConfig());
+			IContainer container = new Container(new DependencyProfileLamar());
 			var app = container.GetInstance<SuperApplicationConsoleApp>();
 			app.Run();
 		}

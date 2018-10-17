@@ -1,4 +1,4 @@
-﻿using Polly;
+﻿//using Polly;
 using System;
 using System.Linq;
 using Talks.C2DF.BetterAppLib.Logging;
@@ -19,19 +19,28 @@ namespace Talks.C2DF.BetterAppLib.v2Features
 
 		public void Send(string message)
 		{
-			var retryPolicy =
-						Policy.Handle<Exception>()
-						.WaitAndRetry(3, (retryCount) =>
-						{
-							_logger.Info($"Attempt {retryCount} to send message");
-							return TimeSpan.FromSeconds(0);
-						},
-							(exception, timespan) =>
-							{
-								_logger.Error($"Error trying to send message: {exception.Message}");
-							});
-
-			retryPolicy.Execute(() => _sender.Send(message));
+			// Non-Polly Hack - Polly was causing Lamar to choak
+			const int retry = 3;
+			try
+			{
+				for (int retryCount = 0; retryCount < retry; retryCount++)
+				{
+					_logger.Info($"Attempt {retryCount} to send message");
+					try
+					{
+						_sender.Send(message);
+						break; // success
+					}
+					catch
+					{
+						continue; // retry
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				_logger.Error($"Error trying to send message: {ex.Message}");
+			}
 		}
 	}
 }
