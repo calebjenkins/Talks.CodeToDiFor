@@ -20,9 +20,9 @@ namespace Talks.C2DF.ConsoleApp
 
 		static void Main(string[] args)
 		{
-			TraditionalConsoleApp();
+			//TraditionalConsoleApp();
 			// CompositeRootConsoleApp();
-			//DIConsoleApp();
+			DIConsoleApp();
 		}
 
 		static void TraditionalConsoleApp()

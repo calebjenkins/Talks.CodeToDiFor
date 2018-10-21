@@ -18,7 +18,7 @@
 			</form>
 		</p>
 
-		@{ if (Model.Price >= 0)
+		@{ if (Model?.Message?.Length > 0)
 			{
 				<h3 class="alert-success">@ViewBag.Message</h3>
 				<div>
@@ -30,6 +30,21 @@
 							<li>Message: @Model.Message</li>
 						</ul>
 					</h4>
+				</div>
+			}
+		}
+
+		@{ if (ViewBag.Logs != null)
+			{
+				<h3 class="alert-success">Logs...</h3>
+				<div>
+					<h4>There are log results</h4>
+						<ul class="list-group-item-heading">
+							@foreach (var log in ViewBag.Logs)
+							{
+								<li>Log (@log.LogType): @log.Message</li>
+							}
+						</ul>
 				</div>
 			}
 		}

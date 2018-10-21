@@ -14,14 +14,14 @@ namespace Talks.C2DF.WebCORE.Controllers
 	public class HomeController : Controller
 	{
 
-		//ILogger _logger;
-		//IMessageSendingMicroApp _sendingApp;
+		ILogger _logger;
+		IMessageSendingMicroApp _sendingApp;
 
-		//public HomeController(ILogger logger, IMessageSendingMicroApp sender)
-		//{
-		//	_logger = logger ?? throw new NullReferenceException(nameof(Logger));
-		//	_sendingApp = sender ?? throw new NullReferenceException(nameof(sender));
-		//}
+		public HomeController(ILogger logger, IMessageSendingMicroApp sender)
+		{
+			_logger = logger ?? throw new NullReferenceException(nameof(Logger));
+			_sendingApp = sender ?? throw new NullReferenceException(nameof(sender));
+		}
 
 		public IActionResult Index()
 		{
@@ -55,14 +55,21 @@ namespace Talks.C2DF.WebCORE.Controllers
 
 		public ActionResult Send(string Text)
 		{
+			if (string.IsNullOrEmpty(Text))
+			{
+				_logger.Debug("Can not send Message from MVC App when text is empty");
+				ViewBag.Message = $"No message to send";
+				ViewBag.Logs = _logger.GetEntries();
+				return View("send", new SendResponse());
+			}
 
-			//	_logger.Debug("Sending Message from MVC App");
-			//	var result = _sendingApp.Send(Text);
-			//	_logger.Debug($"Result: {result.ResultMessage} -- Price: {result.Price} -- Message: {result.Message} ");
+			_logger.Debug("Sending Message from MVC App");
+			var result = _sendingApp.Send(Text);
+			_logger.Debug($"Result: {result.ResultMessage} -- Price: {result.Price} -- Message: {result.Message} ");
 
-			var result = new SendResponse() { Message = Text, ResultMessage = "Fake", Price = 10 };
-
+			
 			ViewBag.Message = $"Message Sent!";
+			ViewBag.Logs = _logger.GetEntries();
 			return View("send", result);
 		}
 	}
