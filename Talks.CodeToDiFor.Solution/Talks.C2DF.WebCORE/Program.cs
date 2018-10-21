@@ -8,6 +8,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Talks.C2DF.BetterApp;
 
 namespace Talks.C2DF.WebCORE
 {
@@ -15,14 +16,17 @@ namespace Talks.C2DF.WebCORE
 	{
 		public static void Main(string[] args)
 		{
-			CreateWebHostBuilder(args)
-			.UseLamar() // Container
-			.Build()
-			.Run();
+			CreateWebHostBuilder(args).Build().Run();
 		}
 
-		public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-			WebHost.CreateDefaultBuilder(args)
-			.UseStartup<Startup>();
+		public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+		{
+			// Container config
+			var registery = new DependencyProfileLamar();
+
+			return WebHost.CreateDefaultBuilder(args)
+				.UseLamar(registery) // register container
+				.UseStartup<Startup>();
+		}
 	}
 }

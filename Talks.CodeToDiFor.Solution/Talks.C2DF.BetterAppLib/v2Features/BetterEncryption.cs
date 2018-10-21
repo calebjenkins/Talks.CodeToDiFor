@@ -29,8 +29,9 @@ namespace Talks.C2DF.BetterAppLib.v2Features
 
 		public string Encrypt(string message)
 		{
-			_logger.Debug($"BetterEncryptor - Encrypting Message: {message} : ");
-			return Reverse(message);
+			var xmsg = "xXX_" + Reverse(message) + "_XXx";
+			_logger.Debug($"BetterEncryptor - Encrypting Message: {message} to {xmsg}");
+			return xmsg;
 		}
 
 		private string Reverse(string s)

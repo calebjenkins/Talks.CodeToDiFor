@@ -19,6 +19,7 @@ namespace Talks.C2DF.BetterAppLib.v2Features
 
 		public void Send(string message)
 		{
+			_logger.Info("Entering Retry Sender");
 			// Non-Polly Hack - Polly was causing Lamar to choak
 			const int retry = 3;
 			try

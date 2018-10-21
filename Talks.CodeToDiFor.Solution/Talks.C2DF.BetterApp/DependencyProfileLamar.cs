@@ -3,6 +3,7 @@ using System;
 using Talks.C2DF.BetterAppLib;
 using Talks.C2DF.BetterAppLib.Console;
 using Talks.C2DF.BetterAppLib.Logging;
+using Talks.C2DF.BetterAppLib.v2Features;
 using Talks.C2DF.Interfaces;
 using external = Talks.C2DF.ExternalLoggingLib;
 using nope = Talks.C2DF.NotSoSuperLib;
@@ -22,9 +23,10 @@ namespace Talks.C2DF.BetterApp
 				scan.AddAllTypesOf<IExtendedPriceRule>();
 			});
 
-			For<ICostCalculator>().Use<CostCalculator>();
+			//For<ICostCalculator>().Use<CostCalculator>();
 			For<IEncryptHelper>().Use<nope.Lib.Encryptor>();
 			//For<IEncryptHelper>().Use<Encryptor>();
+			//For<IEncryptHelper>().Use<BetterEncryptor>();
 			For<IConsole>().Use<ConsoleWriter>();
 			For<IMessageSendingMicroApp>().Use<SuperSendingMicroApp>();
 
@@ -33,13 +35,14 @@ namespace Talks.C2DF.BetterApp
 			For<IAppLogger>().Use<ExternalLogAdapter>(); // not yet singleton
 
 
-			For<IMessageSender>().Use<FedExSender>();
+			//For<IMessageSender>().Use<FedExSender>();
+			//For<IMessageSender>().Use<UpsSender>();
 
 
 			//TODO: Set up Retry.. then change out Sender Imp - maybe to UPS? 
-			// For<ISender>().Use<RetrySender>()
-			//	.Ctor<ISender>("sender").Is<FedExSender>()
-			//	.Singleton();
+			For<IMessageSender>().Use<RetrySender>()
+			  .Ctor<IMessageSender>("sender").Is<FedExSender>()
+			  .Singleton();
 
 			For<IWriter>().Use<DebugWriter>().Singleton();
 			//For<IAppLogger>().Use<MyLogger>().Singleton();

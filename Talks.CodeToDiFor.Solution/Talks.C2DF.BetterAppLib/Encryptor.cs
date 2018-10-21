@@ -24,7 +24,6 @@ namespace Talks.C2DF.BetterAppLib
 		public string Encrypt(string message)
 		{
 			_logger.Write($"Encrypting Message: {message} : ");
-
 			var encMsg = $"xXX_{message}_XXx";
 			_logger.WriteLine($" Encrypted: {encMsg}");
 
