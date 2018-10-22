@@ -20,7 +20,7 @@ namespace Talks.C2DF.BetterAppLib.v2Features
 		public void Send(string message)
 		{
 			_logger.Info("Entering Retry Sender");
-			// Non-Polly Hack - Polly was causing Lamar to choak
+			// Non-Polly Hack - Polly was causing Lamar to choke
 			const int retry = 3;
 			try
 			{
@@ -32,9 +32,14 @@ namespace Talks.C2DF.BetterAppLib.v2Features
 						_sender.Send(message);
 						break; // success
 					}
-					catch
+					catch (Exception innException)
 					{
-						continue; // retry
+						if (retry > retryCount + 1)
+						{
+							continue; // retry
+						}
+
+						throw innException;
 					}
 				}
 			}
