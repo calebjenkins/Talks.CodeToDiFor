@@ -64,15 +64,12 @@ namespace Talks.C2DF.Tests.ShippingCostRules
 			_baseRuleMock.Setup(x => x.RuleName).Returns("Mock Base Rule").Verifiable();
 			_baseRuleMock.Setup(x => x.AppliesTo(It.IsAny<MessageForProcessing>())).Returns(true).Verifiable();
 			_baseRuleMock.Setup(x => x.Apply(It.IsAny<MessageForProcessing>())).Returns(10).Verifiable();
-
 			var basePriceRules = new List<IBasePriceRule>() { _baseRuleMock.Object };
 
 			Mock<IExtendedPriceRule> _extRuleMock = new Mock<IExtendedPriceRule>();
 			_extRuleMock.Setup(x => x.AppliesTo(It.IsAny<MessageForProcessing>())).Returns(false);
 			_extRuleMock.Setup(x => x.RuleName); // Never gets called
 			_extRuleMock.Setup(x => x.Apply(It.IsAny<MessageForProcessing>())); // Never gets called in this test
-
-
 			var extRules = new List<IExtendedPriceRule>() { _extRuleMock.Object };
 
 			var sut = new CostCalculator(basePriceRules, extRules, _loggerMock.Object);
