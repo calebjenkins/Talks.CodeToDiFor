@@ -2,7 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-*/.vs/
+.vs/
+./src/.vs/
 ## /Talks.CodeToDiFor.Solution/.vs/
 
 ### VisualStudio ###
@@ -32,6 +33,7 @@ bld/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+./TestResults/
 
 #NUNIT
 *.VisualState.xml
