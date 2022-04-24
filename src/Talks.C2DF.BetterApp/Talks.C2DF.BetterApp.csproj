@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lamar" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Talks.C2DF.BetterAppLib\Talks.C2DF.BetterAppLib.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.NotSoSuperLib\Talks.C2DF.NotSoSuperLib.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0-preview-20220401-08" />
+    <PackageReference Include="Moq" Version="4.17.2" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10-preview-20220414-01" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.10-preview-20220414-01" />
+    <PackageReference Include="Should" Version="1.1.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Talks.C2DF.BetterAppLib\Talks.C2DF.BetterAppLib.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.ExternalLoggingLib\Talks.C2DF.ExternalLoggingLib.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj" />
+    <ProjectReference Include="..\Talks.C2DF.Models\Talks.C2DF.Models.csproj" />
+  </ItemGroup>
+
+</Project>
