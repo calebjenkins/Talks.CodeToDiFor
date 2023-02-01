@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-Talks.C2DF.WebCORE-AC081B84-4A9A-44B3-A3BC-6E5426D276E7</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeAuth" Version="1.2.0" />
+    <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.4" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.24.0" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Talks.C2DF.BetterAppLib\Talks.C2DF.BetterAppLib.csproj" />
+    <ProjectReference Include="..\src\Talks.C2DF.BetterApp\Talks.C2DF.BetterApp.csproj" />
+    <ProjectReference Include="..\src\Talks.C2DF.ConsoleApp\Talks.C2DF.ConsoleApp.csproj" />
+    <ProjectReference Include="..\src\Talks.C2DF.ExternalLoggingLib\Talks.C2DF.ExternalLoggingLib.csproj" />
+    <ProjectReference Include="..\src\Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj" />
+    <ProjectReference Include="..\src\Talks.C2DF.Models\Talks.C2DF.Models.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,27 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.WebCORE", ".\src\Talks.C2DF.WebCORE\Talks.C2DF.WebCORE.csproj", "{03A38C8F-7F75-48BE-A88E-444DC79B374D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Models", "src\Talks.C2DF.Models\Talks.C2DF.Models.csproj", "{D4CA43AF-5E42-4F35-93CC-F8D26BC3FB7F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Models", ".\src\Talks.C2DF.Models\Talks.C2DF.Models.csproj", "{D4CA43AF-5E42-4F35-93CC-F8D26BC3FB7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.ConsoleApp", "src\Talks.C2DF.ConsoleApp\Talks.C2DF.ConsoleApp.csproj", "{6F821623-18A6-4CCE-840B-9786C4298FB5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.ConsoleApp", ".\src\Talks.C2DF.ConsoleApp\Talks.C2DF.ConsoleApp.csproj", "{6F821623-18A6-4CCE-840B-9786C4298FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.NotSoSuperLib", "src\Talks.C2DF.NotSoSuperLib\Talks.C2DF.NotSoSuperLib.csproj", "{C0B2F9CE-0F7B-41B6-850A-02B5C5F0DCA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.NotSoSuperLib", ".\src\Talks.C2DF.NotSoSuperLib\Talks.C2DF.NotSoSuperLib.csproj", "{C0B2F9CE-0F7B-41B6-850A-02B5C5F0DCA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.ExternalLoggingLib", "src\Talks.C2DF.ExternalLoggingLib\Talks.C2DF.ExternalLoggingLib.csproj", "{95AC0B01-5D1B-40E0-AC5C-882A7A17715B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.ExternalLoggingLib", ".\src\Talks.C2DF.ExternalLoggingLib\Talks.C2DF.ExternalLoggingLib.csproj", "{95AC0B01-5D1B-40E0-AC5C-882A7A17715B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.BetterApp", "src\Talks.C2DF.BetterApp\Talks.C2DF.BetterApp.csproj", "{556D6753-E486-4012-96C1-F54D23AB89C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.BetterApp", ".\src\Talks.C2DF.BetterApp\Talks.C2DF.BetterApp.csproj", "{556D6753-E486-4012-96C1-F54D23AB89C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.BetterAppLib", "src\Talks.C2DF.BetterAppLib\Talks.C2DF.BetterAppLib.csproj", "{24C392F1-260E-4CD6-880A-7F7B4D1E7777}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.BetterAppLib", ".\src\Talks.C2DF.BetterAppLib\Talks.C2DF.BetterAppLib.csproj", "{24C392F1-260E-4CD6-880A-7F7B4D1E7777}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Interfaces", ".\src\Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj", "{8F77AB5B-CFB3-483D-BC61-B0352C7F58EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Interfaces", "src\Talks.C2DF.Interfaces\Talks.C2DF.Interfaces.csproj", "{8F77AB5B-CFB3-483D-BC61-B0352C7F58EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{484EBA83-4A19-482F-99DC-6E54875C6251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.C2DF.Tests", ".\src\Talks.C2DF.Tests\Talks.C2DF.Tests.csproj", "{49ADC828-C09C-449D-A17A-43AA1B64319F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Tests", "src\Talks.C2DF.Tests\Talks.C2DF.Tests.csproj", "{49ADC828-C09C-449D-A17A-43AA1B64319F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.WebCORE.OLD", "src\Talks.C2DF.WebCORE.old\Talks.C2DF.WebCORE.OLD.csproj", "{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.C2DF.WebCORE", "Talks.C2DF.WebCORE\Talks.C2DF.WebCORE.csproj", "{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{03A38C8F-7F75-48BE-A88E-444DC79B374D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03A38C8F-7F75-48BE-A88E-444DC79B374D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03A38C8F-7F75-48BE-A88E-444DC79B374D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03A38C8F-7F75-48BE-A88E-444DC79B374D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4CA43AF-5E42-4F35-93CC-F8D26BC3FB7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4CA43AF-5E42-4F35-93CC-F8D26BC3FB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4CA43AF-5E42-4F35-93CC-F8D26BC3FB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,6 +63,14 @@ Global
 		{49ADC828-C09C-449D-A17A-43AA1B64319F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49ADC828-C09C-449D-A17A-43AA1B64319F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49ADC828-C09C-449D-A17A-43AA1B64319F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Talks.C2DF.BetterApp;
 using Talks.C2DF.ExternalLoggingLib;
 using Talks.C2DF.Interfaces;
 using Talks.C2DF.Models;
@@ -11,15 +9,17 @@ using Talks.C2DF.WebCORE.Models;
 
 namespace Talks.C2DF.WebCORE.Controllers
 {
-	public class HomeController : Controller
+    public class HomeController : Controller
 	{
 
 		ILogger _logger;
 		IMessageSendingMicroApp _sendingApp;
 
-		public HomeController(ILogger logger, IMessageSendingMicroApp sender)
+		// public HomeController(ILogger logger, IMessageSendingMicroApp sender)
+		public HomeController(IMessageSendingMicroApp sender)
 		{
-			_logger = logger ?? throw new NullReferenceException(nameof(Logger));
+			// _logger = logger ?? throw new NullReferenceException(nameof(logger));
+			_logger = new WhackyLogger();
 			_sendingApp = sender ?? throw new NullReferenceException(nameof(sender));
 		}
 
