@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="Lamar" Version="10.0.1" />
+    <PackageReference Include="Lamar.Diagnostics" Version="10.0.1" />
+    <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>

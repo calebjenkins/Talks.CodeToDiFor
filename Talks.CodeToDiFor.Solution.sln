@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.Tests", "src\Tal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.WebCORE.OLD", "src\Talks.C2DF.WebCORE.old\Talks.C2DF.WebCORE.OLD.csproj", "{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talks.C2DF.WebCORE", "Talks.C2DF.WebCORE\Talks.C2DF.WebCORE.csproj", "{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Talks.C2DF.WebCORE", "src\Talks.C2DF.WebCORE\Talks.C2DF.WebCORE.csproj", "{3B009E5F-3DF8-41F2-A80F-5C1E1C9C38D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,10 +67,10 @@ Global
 		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A7B6D04-8287-42E3-9A74-60CAED61C1B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51A47A3F-4BE4-41BE-8238-67FAF5671C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B009E5F-3DF8-41F2-A80F-5C1E1C9C38D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B009E5F-3DF8-41F2-A80F-5C1E1C9C38D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B009E5F-3DF8-41F2-A80F-5C1E1C9C38D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B009E5F-3DF8-41F2-A80F-5C1E1C9C38D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

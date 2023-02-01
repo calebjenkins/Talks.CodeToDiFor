@@ -26,19 +26,19 @@ namespace Talks.C2DF.BetterApp
 
 			// ** Logging ** 
 			//For<external.ILogger>().Use(external.Logger.Instance()); // DI with existing instance - is singleton
-			For<external.ILogger>().Use<external.WhackyLogger>();
-			For<IAppLogger>().Use<ExternalLogAdapter>();            // not yet singleton
+			For<external.ILogger>().Add<external.WhackyLogger>();
+			For<IAppLogger>().Add<ExternalLogAdapter>();            // not yet singleton
 
 
-			For<ICostCalculator>().Use<CostCalculator>();		// Not needed, follows conventions
-			For<IEncryptHelper>().Use<nope.Lib.Encryptor>();	// Bad Lib, no DI - no logging
+			For<ICostCalculator>().Add<CostCalculator>();		// Not needed, follows conventions
+			For<IEncryptHelper>().Add<nope.Lib.Encryptor>();	// Bad Lib, no DI - no logging
 			//For<IEncryptHelper>().Use<Encryptor>();				// Better Lib, uses DI
 			//For<IEncryptHelper>().Use<BetterEncryptor>();		// Better Encryptor
 
-			For<IConsole>().Use<ConsoleWriter>();
-			For<IMessageSendingMicroApp>().Use<SuperSendingMicroApp>();
+			For<IConsole>().Add<ConsoleWriter>();
+			For<IMessageSendingMicroApp>().Add<SuperSendingMicroApp>();
 
-			For<IMessageSender>().Use<FedExSender>();
+			For<IMessageSender>().Add<FedExSender>();
 			//For<IMessageSender>().Use<UpsSender>();
 
 			//TODO: Set up Retry.. then change out Sender Imp - maybe to UPS? 
@@ -46,8 +46,8 @@ namespace Talks.C2DF.BetterApp
 			//  .Ctor<IMessageSender>("sender").Is<FedExSender>()
 			//  .Singleton();
 
-			For<IWriter>().Use<DebugWriter>().Singleton();
-			// For<IAppLogger>().Use<MyLogger>().Singleton();
+			For<IWriter>().Add<DebugWriter>().Singleton();
+			For<IAppLogger>().Add<MyLogger>().Singleton();
 		}
 	}
 }
