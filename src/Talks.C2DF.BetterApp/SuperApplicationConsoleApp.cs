@@ -1,57 +1,54 @@
 ﻿using System;
 using Talks.C2DF.BetterAppLib.Console;
-using Talks.C2DF.BetterAppLib.Logging;
 using Talks.C2DF.Interfaces;
-using Talks.C2DF.Models;
 
-namespace Talks.C2DF.BetterApp
+namespace Talks.C2DF.BetterApp;
+
+public class SuperApplicationConsoleApp
 {
-	public class SuperApplicationConsoleApp
+
+	readonly IMessageSendingMicroApp _senderApp;
+	readonly IConsole _console;
+
+	public SuperApplicationConsoleApp(IMessageSendingMicroApp senderApp, IConsole consoleWriter)
 	{
+		_senderApp = senderApp ?? throw new ArgumentNullException(nameof(senderApp), $"{nameof(senderApp)} is null.");
+		_console = consoleWriter ?? throw new ArgumentNullException(nameof(consoleWriter), $"{nameof(consoleWriter)} is null.");
+	}
 
-		readonly IMessageSendingMicroApp _senderApp;
-		readonly IConsole _console;
+	public void Run()
+	{
+		ConsoleKey key = ConsoleKey.Enter;
 
-		public SuperApplicationConsoleApp(IMessageSendingMicroApp senderApp, IConsole consoleWriter)
+		while (key != ConsoleKey.Spacebar)
 		{
-			_senderApp = senderApp ?? throw new ArgumentNullException(nameof(senderApp), $"{nameof(senderApp)} is null.");
-			_console = consoleWriter ?? throw new ArgumentNullException(nameof(consoleWriter), $"{nameof(consoleWriter)} is null.");
-		}
+			var startColor = _console.ForegroundColor;
 
-		public void Run()
-		{
-			ConsoleKey key = ConsoleKey.Enter;
+			_console.WriteLine(" ** Starting App ** DI Friendly Lib **");
+			_console.Write("Enter Message:");
+			var msg = _console.ReadLine();
 
-			while (key != ConsoleKey.Spacebar)
-			{
-				var startColor = _console.ForegroundColor;
+			_console.WriteLine();
+			_console.WriteLine("Output:");
+			_console.ForegroundColor = ConsoleColor.Cyan;
 
-				_console.WriteLine(" ** Starting App ** DI Friendly Lib **");
-				_console.Write("Enter Message:");
-				var msg = _console.ReadLine();
+			var result = _senderApp.Send(msg);
 
-				_console.WriteLine();
-				_console.WriteLine("Output:");
-				_console.ForegroundColor = ConsoleColor.Cyan;
+			_console.ForegroundColor = startColor;
 
-				var result = _senderApp.Send(msg);
-
-				_console.ForegroundColor = startColor;
-
-				_console.WriteLine();
-				_console.WriteLine($"Result: {result.Price} ");
-				_console.WriteLine($"    Price: {result.Price} ");
-				_console.WriteLine($"    Message: {result.Message} ");
-				_console.WriteLine($"    Result Message: {result.ResultMessage} ");
+			_console.WriteLine();
+			_console.WriteLine($"Result: {result.Price} ");
+			_console.WriteLine($"    Price: {result.Price} ");
+			_console.WriteLine($"    Message: {result.Message} ");
+			_console.WriteLine($"    Result Message: {result.ResultMessage} ");
 
 
-				_console.WriteLine(" ** Complete **");
-				_console.WriteLine(" ** Space bar to Exit **");
+			_console.WriteLine(" ** Complete **");
+			_console.WriteLine(" ** Space bar to Exit **");
 
-				key = _console.ReadKey().Key;
+			key = _console.ReadKey().Key;
 
-				_console.Clear();
-			}
+			_console.Clear();
 		}
 	}
 }

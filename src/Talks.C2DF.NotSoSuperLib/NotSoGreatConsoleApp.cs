@@ -1,47 +1,44 @@
 ﻿using System;
-using Talks.C2DF.Models;
-using Talks.C2DF.NotSoSuperLib.Lib;
 
-namespace Talks.C2DF.NotSoSuperLib
+namespace Talks.C2DF.NotSoSuperLib;
+
+public class NotSoGreatConsoleApp
 {
-	public class NotSoGreatConsoleApp
+	public void Run()
 	{
-		public void Run()
+		ConsoleKey key = ConsoleKey.Enter;
+
+		while (key != ConsoleKey.Spacebar)
 		{
-			ConsoleKey key = ConsoleKey.Enter;
+			var startColor = Console.ForegroundColor;
 
-			while (key != ConsoleKey.Spacebar)
-			{
-				var startColor = Console.ForegroundColor;
+			Console.WriteLine(" ** Starting App ** Not so great lib **");
+			Console.Write("Enter Message:");
+			var msg = Console.ReadLine();
 
-				Console.WriteLine(" ** Starting App ** Not so great lib **");
-				Console.Write("Enter Message:");
-				var msg = Console.ReadLine();
+			Console.WriteLine();
+			Console.WriteLine("Output:");
+			Console.ForegroundColor = ConsoleColor.Red;
 
-				Console.WriteLine();
-				Console.WriteLine("Output:");
-				Console.ForegroundColor = ConsoleColor.Red;
+			var senderApp = new NotSoGreatSendingMicroApp();
+			var result = senderApp.Send(msg);
 
-				var senderApp = new NotSoGreatSendingMicroApp();
-				var result = senderApp.Send(msg);
+			Console.ForegroundColor = startColor;
 
-				Console.ForegroundColor = startColor;
-
-				Console.WriteLine();
-				Console.WriteLine($"Result: {result.Price} ");
-				Console.WriteLine($"    Price: {result.Price} ");
-				Console.WriteLine($"    Message: {result.Message} ");
-				Console.WriteLine($"    Result Message: {result.ResultMessage} ");
+			Console.WriteLine();
+			Console.WriteLine($"Result: {result.Price} ");
+			Console.WriteLine($"    Price: {result.Price} ");
+			Console.WriteLine($"    Message: {result.Message} ");
+			Console.WriteLine($"    Result Message: {result.ResultMessage} ");
 
 
-				Console.WriteLine(" ** Complete **");
-				Console.WriteLine(" ** Space bar to Exit **");
+			Console.WriteLine(" ** Complete **");
+			Console.WriteLine(" ** Space bar to Exit **");
 
-				var kInfo = Console.ReadKey();
-				key = kInfo.Key;
+			var kInfo = Console.ReadKey();
+			key = kInfo.Key;
 
-				Console.Clear();
-			}
+			Console.Clear();
 		}
 	}
 }

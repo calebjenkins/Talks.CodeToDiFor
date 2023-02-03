@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Talks.C2DF.Interfaces;
+﻿using Talks.C2DF.Interfaces;
 using Talks.C2DF.Models;
 
-namespace Talks.C2DF.BetterAppLib.Rules
+namespace Talks.C2DF.BetterAppLib.Rules;
+
+public class GodSaveQueenExtendedPriceRule : IExtendedPriceRule
 {
-	public class GodSaveQueenExtendedPriceRule : IExtendedPriceRule
+	public string RuleName => "God Save the Queen";
+
+	public bool AppliesTo(MessageForProcessing Message)
 	{
-		public string RuleName => "God Save the Queen";
+		return (Message.Text.Contains("GodSaveTheQueen"));
+	}
 
-		public bool AppliesTo(MessageForProcessing Message)
-		{
-			return (Message.Text.Contains("GodSaveTheQueen"));
-		}
-
-		public int Apply(MessageForProcessing Message)
-		{
-			return 0;
-		}
+	public int Apply(MessageForProcessing Message)
+	{
+		return 0;
 	}
 }

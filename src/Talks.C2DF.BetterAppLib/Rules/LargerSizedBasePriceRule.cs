@@ -1,22 +1,19 @@
-﻿using System;
-using System.Linq;
-using Talks.C2DF.Interfaces;
+﻿using Talks.C2DF.Interfaces;
 using Talks.C2DF.Models;
 
-namespace Talks.C2DF.BetterAppLib.Rules
+namespace Talks.C2DF.BetterAppLib.Rules;
+
+public class LargerSizedBasePriceRule : IBasePriceRule
 {
-	public class LargerSizedBasePriceRule : IBasePriceRule
+	public string RuleName => "Larger Sized Rule";
+
+	public bool AppliesTo(MessageForProcessing Message)
 	{
-		public string RuleName => "Larger Sized Rule";
+		return (Message.Weight > 9);
+	}
 
-		public bool AppliesTo(MessageForProcessing Message)
-		{
-			return (Message.Weight > 9);
-		}
-
-		public int Apply(MessageForProcessing Message)
-		{
-			return 10;
-		}
+	public int Apply(MessageForProcessing Message)
+	{
+		return 10;
 	}
 }

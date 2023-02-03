@@ -1,9 +1,6 @@
-﻿using System;
+﻿namespace Talks.C2DF.Interfaces;
 
-namespace Talks.C2DF.Interfaces
+public interface ICostCalculator
 {
-	public interface ICostCalculator
-	{
-		int CalculatePrice(string message);
-	}
+	int CalculatePrice(string message);
 }

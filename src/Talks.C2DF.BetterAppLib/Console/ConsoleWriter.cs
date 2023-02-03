@@ -1,42 +1,41 @@
 ﻿using System;
 
-namespace Talks.C2DF.BetterAppLib.Console
+namespace Talks.C2DF.BetterAppLib.Console;
+
+public class ConsoleWriter : IConsole
 {
-	public class ConsoleWriter : IConsole
+	public ConsoleColor ForegroundColor { get => System.Console.ForegroundColor; set => System.Console.ForegroundColor = value; }
+
+	public void Clear()
 	{
-		public ConsoleColor ForegroundColor { get => System.Console.ForegroundColor; set => System.Console.ForegroundColor = value; }
+		System.Console.Clear();
+	}
 
-		public void Clear()
-		{
-			System.Console.Clear();
-		}
+	public ConsoleKeyInfo ReadKey()
+	{
+		return System.Console.ReadKey();
+	}
 
-		public ConsoleKeyInfo ReadKey()
-		{
-			return System.Console.ReadKey();
-		}
+	public string ReadLine()
+	{
+		return System.Console.ReadLine();
+	}
 
-		public string ReadLine()
-		{
-			return System.Console.ReadLine();
-		}
-
-		// IWriter
-		public void Write()
-		{
-			Write("");
-		}
-		public void Write(string text)
-		{
-			System.Console.Write(text);
-		}
-		public void WriteLine()
-		{
-			WriteLine("");
-		}
-		public void WriteLine(string text)
-		{
-			System.Console.WriteLine(text);
-		}
+	// IWriter
+	public void Write()
+	{
+		Write("");
+	}
+	public void Write(string text)
+	{
+		System.Console.Write(text);
+	}
+	public void WriteLine()
+	{
+		WriteLine("");
+	}
+	public void WriteLine(string text)
+	{
+		System.Console.WriteLine(text);
 	}
 }

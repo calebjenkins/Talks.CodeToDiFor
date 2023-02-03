@@ -1,10 +1,6 @@
-﻿using System;
-using Talks.C2DF.Models;
+﻿namespace Talks.C2DF.Interfaces;
 
-namespace Talks.C2DF.Interfaces
-{
-	public interface IMessageSender
-		{
-			void Send(string message);
-		}
-}
+public interface IMessageSender
+	{
+		void Send(string message);
+	}

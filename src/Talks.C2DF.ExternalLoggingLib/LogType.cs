@@ -1,12 +1,9 @@
-﻿using System;
+﻿namespace Talks.C2DF.ExternalLoggingLib;
 
-namespace Talks.C2DF.ExternalLoggingLib
+public enum LogType
 {
-	public enum LogType
-	{
-		Warn,
-		Debug,
-		Info,
-		Error
-	}
+	Warn,
+	Debug,
+	Info,
+	Error
 }

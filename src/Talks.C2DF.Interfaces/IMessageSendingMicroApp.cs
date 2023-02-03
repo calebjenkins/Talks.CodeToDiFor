@@ -1,10 +1,8 @@
-﻿using System;
-using Talks.C2DF.Models;
+﻿using Talks.C2DF.Models;
 
-namespace Talks.C2DF.Interfaces
+namespace Talks.C2DF.Interfaces;
+
+public interface IMessageSendingMicroApp
 {
-	public interface IMessageSendingMicroApp
-	{
-		SendResponse Send(string message);
-	}
+	SendResponse Send(string message);
 }

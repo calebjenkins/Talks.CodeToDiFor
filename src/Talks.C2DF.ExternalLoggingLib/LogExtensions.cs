@@ -1,39 +1,36 @@
-﻿using System;
+﻿namespace Talks.C2DF.ExternalLoggingLib;
 
-namespace Talks.C2DF.ExternalLoggingLib
+public static class LogExtensions
 {
-	public static class LogExtensions
+	public static void Warn(this ILogger logger, string message)
 	{
-		public static void Warn(this ILogger logger, string message)
+		if (logger.Enabled(LogType.Warn))
 		{
-			if (logger.Enabled(LogType.Warn))
-			{
-				logger.Log(new LogEntry() { Message = message, LogType = LogType.Warn });
-			}
+			logger.Log(new LogEntry() { Message = message, LogType = LogType.Warn });
 		}
+	}
 
-		public static void Debug(this ILogger logger, string message)
+	public static void Debug(this ILogger logger, string message)
+	{
+		if (logger.Enabled(LogType.Debug))
 		{
-			if (logger.Enabled(LogType.Debug))
-			{
-				logger.Log(new LogEntry() { Message = message, LogType = LogType.Debug });
-			}
+			logger.Log(new LogEntry() { Message = message, LogType = LogType.Debug });
 		}
+	}
 
-		public static void Info(this ILogger logger, string message)
+	public static void Info(this ILogger logger, string message)
+	{
+		if (logger.Enabled(LogType.Info))
 		{
-			if (logger.Enabled(LogType.Info))
-			{
-				logger.Log(new LogEntry() { Message = message, LogType = LogType.Info });
-			}
+			logger.Log(new LogEntry() { Message = message, LogType = LogType.Info });
 		}
+	}
 
-		public static void Error(this ILogger logger, string message)
+	public static void Error(this ILogger logger, string message)
+	{
+		if (logger.Enabled(LogType.Error))
 		{
-			if (logger.Enabled(LogType.Error))
-			{
-				logger.Log(new LogEntry() { Message = message, LogType = LogType.Error });
-			}
+			logger.Log(new LogEntry() { Message = message, LogType = LogType.Error });
 		}
 	}
 }

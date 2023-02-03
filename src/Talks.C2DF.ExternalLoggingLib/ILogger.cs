@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Talks.C2DF.ExternalLoggingLib
+namespace Talks.C2DF.ExternalLoggingLib;
+
+public interface ILogger
 {
-	public interface ILogger
-	{
-		void Log(LogEntry logEntry);
-		bool Enabled(LogType type);
-		IList<LogEntry> GetEntries();
-	}
+	void Log(LogEntry logEntry);
+	bool Enabled(LogType type);
+	IList<LogEntry> GetEntries();
 }
