@@ -1,91 +1,90 @@
 ﻿using System;
 using Talks.C2DF.BetterApp;
 using Talks.C2DF.Interfaces;
-using nope = Talks.C2DF.NotSoSuperLib;
-using external = Talks.C2DF.ExternalLoggingLib;
-using Talks.C2DF.BetterAppLib.Logging;
+using Nope = Talks.C2DF.NotSoSuperLib;
+using ExtLog = Talks.C2DF.ExternalLoggingLib;
 using Talks.C2DF.BetterAppLib;
 using Talks.C2DF.BetterAppLib.Console;
 using System.Collections.Generic;
 using Talks.C2DF.BetterAppLib.Rules;
 using Lamar;
 
-namespace Talks.C2DF.ConsoleApp
+namespace Talks.C2DF.ConsoleApp;
+
+class Program
 {
-	class Program
+
+	//	Application -> Sender -> Cost Calc -> Encryptor -> Send (with Retry)
+	//  <- SendResponse
+
+	static void Main(string[] args)
 	{
+		//TraditionalConsoleApp();
+		// CompositeRootConsoleApp();
+		DIConsoleApp();
+	}
 
-		//	Application -> Sender -> Cost Calc -> Encryptor -> Send (with Retry)
-		//  <- SendResponse
+	static void TraditionalConsoleApp()
+	{
+		var app = new Nope.NotSoGreatConsoleApp();
+		app.Run();
+	}
 
-		static void Main(string[] args)
-		{
-			//TraditionalConsoleApp();
-			// CompositeRootConsoleApp();
-			DIConsoleApp();
-		}
+	static void CompositeRootConsoleApp()
+	{
+		var app = AppComposite();
+		app.Run();
+	}
 
-		static void TraditionalConsoleApp()
-		{
-			var app = new nope.NotSoGreatConsoleApp();
-			app.Run();
-		}
+	#region CompositonRoot
 
-		static void CompositeRootConsoleApp()
-		{
-			var app = AppComposite();
-			app.Run();
-		}
+	static SuperApplicationConsoleApp AppComposite()
+	{
+		IEncryptHelper crypto = new Nope.Lib.Encryptor();
+            ExtLog.ILogger logger = new ExtLog.Logger(); // Not singleton
 
-		#region CompositonRoot
+        //IAppLogger myLogger = new ExternalLogAdapter(logger);
+        IAppLogger myLogger = new ExternalLogAdapter();
+        IMessageSender sender = new FedExSender(crypto, myLogger);
 
-		static SuperApplicationConsoleApp AppComposite()
-		{
-			IEncryptHelper crypto = new nope.Lib.Encryptor();
-			external.ILogger logger = new external.Logger(); // Not singleton
+		var basePriceRules = getBasePriceRules();
+		var extPriceRules = getExtendedPriceRules();
 
-			IAppLogger myLogger = new ExternalLogAdapter(logger);
-			IMessageSender sender = new FedExSender(crypto, myLogger);
+		ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
+		IMessageSendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
 
-			var basePriceRules = getBasePriceRules();
-			var extPriceRules = getExtendedPriceRules();
+		IConsole writer = new ConsoleWriter();
 
-			ICostCalculator calc = new CostCalculator(basePriceRules, extPriceRules, myLogger);
-			IMessageSendingMicroApp senderApp = new SuperSendingMicroApp(calc, sender, myLogger);
+		return new SuperApplicationConsoleApp(senderApp, writer);
+	}
 
-			IConsole writer = new ConsoleWriter();
+	static IList<IBasePriceRule> getBasePriceRules()
+	{
+		return new List<IBasePriceRule>()
+			{
+				new LargerSizedBasePriceRule(),
+				new MediumSizedBasePriceRule(),
+				new SmallSizeBasePriceRule()
+			};
+	}
 
-			return new SuperApplicationConsoleApp(senderApp, writer);
-		}
+	static IList<IExtendedPriceRule> getExtendedPriceRules()
+	{
+		return new List<IExtendedPriceRule>()
+			{
+				new ReallyUrgentMessageExtendedPriceRule(),
+				new SpecialDealExtendedPriceRule(),
+				new UrgentMessageExtendedPriceRule(),
+				new GodSaveQueenExtendedPriceRule()
+			};
+	}
 
-		static IList<IBasePriceRule> getBasePriceRules()
-		{
-			return new List<IBasePriceRule>()
-				{
-					new LargerSizedBasePriceRule(),
-					new MediumSizedBasePriceRule(),
-					new SmallSizeBasePriceRule()
-				};
-		}
+	#endregion
 
-		static IList<IExtendedPriceRule> getExtendedPriceRules()
-		{
-			return new List<IExtendedPriceRule>()
-				{
-					new ReallyUrgentMessageExtendedPriceRule(),
-					new SpecialDealExtendedPriceRule(),
-					new UrgentMessageExtendedPriceRule(),
-					new GodSaveQueenExtendedPriceRule()
-				};
-		}
-
-		#endregion
-
-		static void DIConsoleApp()
-		{
-			IContainer container = new Container(new DependencyProfileLamar());
-			var app = container.GetInstance<SuperApplicationConsoleApp>();
-			app.Run();
-		}
+	static void DIConsoleApp()
+	{
+		IContainer container = new Container(new DependencyProfileLamar());
+		var app = container.GetInstance<SuperApplicationConsoleApp>();
+		app.Run();
 	}
 }
